@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Adatvédelem | Barca Store</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Montserrat',sans-serif;
+background:#f5f5f5;
+}
+footer{
+background:#0b2a55;
+padding:60px 40px;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:30px;
+max-width:1400px;
+margin:auto;
+}
+
+.footer-grid h4{
+margin-bottom:15px;
+font-size:16px;
+}
+
+.footer-grid a{
+display:block;
+font-size:14px;
+margin-bottom:10px;
+color:#ddd;
+text-decoration:none;
+line-height:1.4;
+}
+
+.footer-grid a:hover{
+text-decoration:underline;
+color:white;
+}
+
+.footer-grid p{
+font-size:14px;
+margin-bottom:8px;
+color:#ddd;
+}
+
+.email-box{
+display:flex;
+margin-top:10px;
+}
+
+.email-box input{
+padding:8px;
+border:none;
+outline:none;
+}
+
+.email-box button{
+background:#ffd400;
+border:none;
+padding:8px 12px;
+cursor:pointer;
+font-weight:bold;
+}
+
+@media(max-width:1000px){
+
+.footer-grid{
+grid-template-columns:repeat(2,1fr);
+gap:40px;
+}
+
+}
+/* HEADER */
+
+.privacy-header{
+background:linear-gradient(90deg,#e21b3c,#2c6bed);
+color:white;
+padding:60px 80px;
+}
+
+.privacy-header h1{
+font-size:40px;
+}
+
+/* LAYOUT */
+
+.privacy-container{
+display:grid;
+grid-template-columns:260px 1fr;
+gap:40px;
+padding:60px 80px;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+background:white;
+padding:20px;
+border-radius:8px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.sidebar div{
+padding:12px;
+cursor:pointer;
+border-left:4px solid transparent;
+}
+
+.sidebar div:hover{
+background:#f2f2f2;
+}
+
+.sidebar .active{
+border-left:4px solid #e21b3c;
+background:#fafafa;
+font-weight:600;
+}
+
+/* CONTENT */
+
+.content{
+background:white;
+padding:30px;
+border-radius:8px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+line-height:1.7;
+}
+
+.content h2{
+margin-top:0;
+}
+
+.logo-text{
+display:flex;
+flex-direction:column;
+font-weight:bold;
+font-size:14px;
+line-height:1.1;
+}
+
+/* NAVBAR */
+
+.navbar{
+background:#07244a;
+display:grid;
+grid-template-columns:1fr auto 1fr;
+align-items:center;
+padding:15px 40px;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo img{
+width:40px;
+}
+
+.menu{
+display:flex;
+gap:30px;
+justify-content:center;
+}
+
+.menu a{
+color:white;
+text-decoration:none;
+font-weight:600;
+}
+
+.menu a:hover{
+color:#ffd400;
+}
+.bigtext{
+text-align:center;
+font-size:90px;
+font-weight:bold;
+padding:80px 0;
+opacity:0.8;
+}
+.footer-grid {
+    color:white
+}
+</style>
+<link rel="stylesheet" href="cart-system.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+
+<a class="logo" href="barca.html">
+<img src="img/logo.png">
+<div class="logo-text">
+<span style="color: white;">Official Barca</span>
+<span style="color: white;">Store</span>
+</div>
+</a>
+
+<div class="menu">
+<a href="barca.html">Főoldal</a>
+
+</div>
+
+<div class="nav-actions">
+<button class="cart-toggle" type="button" aria-label="Kosár" title="Kosár">&#128717;<span class="cart-count">0</span></button>
+</div>
+
+</nav>
+
+<section class="privacy-header">
+<h1>Adatvédelmi információk</h1>
+</section>
+
+<div class="privacy-container">
+
+<div class="sidebar" id="menu">
+
+<div class="active" onclick="loadContent('privacy',this)">Adatvédelmi szabályzat</div>
+<div onclick="loadContent('purchase',this)">Vásárlási feltételek</div>
+<div onclick="loadContent('cookie',this)">Süti szabályzat</div>
+<div onclick="loadContent('access',this)">Akadálymentesség</div>
+
+</div>
+
+<div class="content" id="content"></div>
+
+</div>
+<div class="bigtext">
+FC BARCELONA
+</div>
+<footer>
+
+<div class="footer-grid">
+
+<div>
+<h4>Legfrissebb hírek</h4>
+<p>Iratkozz fel hírlevelünkre</p>
+
+<div class="email-box">
+<input id="emailInput" placeholder="Email">
+<button onclick="subscribe()">→</button>
+</div>
+
+<p style="margin-top:10px;font-size:12px">
+Ha megadod az email címed, hírleveleket fogsz kapni a Barcelona Store-tól.
+</p>
+</div>
+
+<div>
+<h4>Segítség és információ</h4>
+<a href="rendeles.html">Rendelés állapota</a>
+<a href="visszakuldes.html">Visszaküldési portál</a>
+<a href="telefon.html">Segítség</a>
+<a href="segitseg.html">Rendelések</a>
+<a href="segitseg.html">Szállítás és kézbesítés</a>
+<a href="segitseg.html">Visszatérítések</a>
+<a href="segitseg.html">Fizetési lehetőségek</a>
+<a href="kapcsolat.html">Kapcsolat</a>
+</div>
+
+<div>
+<h4>Hasznos linkek</h4>
+<a href="https://apps.apple.com/us/app/fc-barcelona-official-app/id343196080">FC Barcelona iOS alkalmazás</a>
+<a href="#">FC Barcelona Android alkalmazás</a>
+</div>
+
+<div>
+<h4>Közösségi média</h4>
+<a href="https://www.facebook.com/fcbarcelona/">Facebook</a>
+<a href="https://x.com/fcbarcelona_es">Twitter</a>
+<a href="https://open.spotify.com/">Spotify</a>
+<a href="https://www.youtube.com/user/fcbarcelona">YouTube</a>
+<a href="https://www.instagram.com/fcbarcelona/">Instagram FC Barcelona</a>
+<a href="https://www.instagram.com/barcastore/">Instagram Barca Store</a>
+<a href="https://www.tiktok.com/@fcbarcelona">TikTok</a>
+</div>
+
+<div>
+<h4>Adatvédelem</h4>
+<a href="adatvedelem.html">Adatvédelmi szabályzat</a>
+<a href="adatvedelem.html">Vásárlási feltételek</a>
+<a href="adatvedelem.html">Süti szabályzat</a>
+<a href="adatvedelem.html">Akadálymentesség</a>
+</div>
+
+</div>
+
+</footer>
+<script>
+
+const texts={
+
+privacy:`
+<h2>Adatvédelmi szabályzat</h2>
+
+<p>Az FC Barcelona hivatalos webshopja kiemelten fontosnak tartja a felhasználók személyes adatainak védelmét. 
+Az általunk gyűjtött adatok kizárólag a szolgáltatás működéséhez, a rendelések feldolgozásához és a felhasználói élmény javításához kerülnek felhasználásra.</p>
+
+<p>A kezelt adatok közé tartozhatnak:</p>
+
+<ul>
+<li>Név és kapcsolattartási adatok</li>
+<li>Email cím</li>
+<li>Szállítási cím</li>
+<li>Rendelési információk</li>
+</ul>
+
+<p>Az adatokat biztonságos rendszerekben tároljuk és harmadik fél számára csak a szükséges mértékben továbbítjuk (például futárszolgáltatók felé).</p>
+`,
+
+purchase:`
+<h2>Vásárlási feltételek</h2>
+
+<p>A webshop használatával a felhasználó elfogadja az általános vásárlási feltételeket.</p>
+
+<ul>
+<li>A rendelés leadása után visszaigazoló email kerül kiküldésre.</li>
+<li>A fizetés biztonságos fizetési rendszereken keresztül történik.</li>
+<li>A termékek kiszállítása futárszolgálattal történik.</li>
+<li>A vásárló jogosult a termék visszaküldésére a megadott határidőn belül.</li>
+</ul>
+
+<p>A webshop fenntartja a jogot az árak és feltételek módosítására.</p>
+`,
+
+cookie:`
+<h2>Süti szabályzat</h2>
+
+<p>Weboldalunk sütiket használ a felhasználói élmény javítása érdekében.</p>
+
+<p>A sütik segítenek például:</p>
+
+<ul>
+<li>A bejelentkezési adatok megjegyzésében</li>
+<li>A kosár tartalmának tárolásában</li>
+<li>Weboldal statisztikák készítésében</li>
+</ul>
+
+<p>A felhasználó a böngésző beállításaiban bármikor letilthatja a sütik használatát.</p>
+`,
+
+access:`
+<h2>Akadálymentesség</h2>
+
+<p>Az FC Barcelona webshop célja, hogy minden felhasználó számára elérhető legyen.</p>
+
+<p>Az oldal tervezése során figyelembe vesszük:</p>
+
+<ul>
+<li>A képernyőolvasók támogatását</li>
+<li>A kontrasztos színeket</li>
+<li>A billentyűzetes navigáció lehetőségét</li>
+</ul>
+
+<p>Ha bármilyen akadályba ütközik az oldal használata során, kérjük vegye fel velünk a kapcsolatot.</p>
+`
+
+}
+
+function loadContent(type,element){
+
+document.querySelectorAll("#menu div").forEach(el=>{
+el.classList.remove("active")
+})
+
+element.classList.add("active")
+
+document.getElementById("content").innerHTML=texts[type]
+
+}
+
+loadContent("privacy",document.querySelector("#menu div"))
+
+</script>
+
+<script src="cart-system.js" defer></script>
+
+</body>
+</html>

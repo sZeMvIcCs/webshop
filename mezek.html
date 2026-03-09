@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mezek – Barca Store</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#f5f5f5;
+}
+
+/* TOPBAR */
+
+.topbar{
+background:linear-gradient(90deg,#c11,#6b5cff);
+text-align:center;
+padding:10px;
+font-size:14px;
+color:white;
+}
+
+/* NAVBAR */
+
+.navbar{
+background:#07244a;
+display:grid;
+grid-template-columns:1fr auto 1fr;
+align-items:center;
+padding:15px 40px;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo img{
+width:40px;
+}
+
+.logo-text{
+display:flex;
+flex-direction:column;
+font-weight:bold;
+font-size:14px;
+color:white;
+}
+
+.menu{
+display:flex;
+gap:30px;
+font-weight:600;
+justify-content:center;
+}
+
+.menu a{
+color:white;
+text-decoration:none;
+}
+
+.menu a:hover{
+color:#ffdd00;
+}
+
+/* TITLE */
+
+.title{
+font-family:'Bebas Neue';
+font-size:110px;
+color:#07244a;
+padding:40px;
+}
+
+/* FILTER BAR */
+
+.filters{
+background:#f2f2f2;
+border-top:1px solid #ddd;
+border-bottom:1px solid #ddd;
+padding:20px 40px;
+display:flex;
+gap:40px;
+align-items:center;
+font-weight:600;
+}
+
+.filter{
+position:relative;
+cursor:pointer;
+}
+
+.dropdown{
+display:none;
+position:absolute;
+top:40px;
+left:0;
+background:white;
+padding:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+width:320px;
+grid-template-columns:1fr 1fr;
+gap:10px;
+z-index:10;
+}
+
+.filter.active .dropdown{
+display:grid;
+}
+
+.filter.active .price-dropdown{
+display:flex;
+}
+
+.dropdown label{
+font-size:14px;
+}
+
+/* COLLECTION */
+
+.collection{
+grid-template-columns:1fr 1fr;
+width:420px;
+}
+
+.collection-top{
+grid-column:1 / span 2;
+display:flex;
+justify-content:space-between;
+margin-bottom:10px;
+font-size:14px;
+}
+
+.reset{
+color:#777;
+cursor:pointer;
+}
+
+.reset:hover{
+color:black;
+}
+
+/* PRICE SLIDER */
+
+.price-dropdown{
+flex-direction:column;
+gap:10px;
+width:300px;
+
+}
+
+.price-values{
+
+display:flex;
+justify-content:space-between;
+font-size:14px;
+
+}
+
+input[type=range]{
+
+width:100%;
+appearance:none;
+height:6px;
+background:#ccc;
+border-radius:10px;
+
+}
+
+input[type=range]::-webkit-slider-thumb{
+
+appearance:none;
+width:16px;
+height:16px;
+background:#07244a;
+border-radius:50%;
+cursor:pointer;
+
+}
+
+/* ORDER BY */
+
+.orderby{
+position:relative;
+margin-left:auto;
+}
+
+.orderby-button{
+background:white;
+border:1px solid #ccc;
+padding:10px 14px;
+cursor:pointer;
+font-weight:600;
+}
+
+.orderby-menu{
+display:none;
+position:absolute;
+top:45px;
+right:0;
+background:white;
+border:1px solid #ccc;
+width:200px;
+z-index:20;
+}
+
+.orderby-menu div{
+padding:12px;
+cursor:pointer;
+}
+
+.orderby-menu div:hover{
+background:#f2f2f2;
+}
+
+.orderby.active .orderby-menu{
+display:block;
+}
+
+/* PRODUCTS */
+
+.products{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:30px;
+padding:40px;
+max-width:1600px;
+margin:auto;
+}
+
+.product{
+background:white;
+border-radius:10px;
+overflow:hidden;
+transition:0.25s;
+}
+
+.product-link{
+text-decoration:none;
+color:inherit;
+display:block;
+}
+
+.product:hover{
+transform:translateY(-6px);
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.product img{
+width:100%;
+height:320px;
+object-fit:cover;
+}
+
+.product-info{
+padding:15px;
+}
+
+.product-info h4{
+font-size:12px;
+color:#7a8594;
+}
+
+.product-info p{
+font-size:14px;
+margin-top:4px;
+}
+
+.price{
+font-weight:bold;
+margin-top:8px;
+}
+
+/* BIG TEXT */
+
+.bigtext{
+text-align:center;
+font-size:90px;
+font-weight:bold;
+padding:80px 0;
+opacity:0.8;
+}
+
+.toast{
+position:fixed;
+bottom:30px;
+right:30px;
+background:#07244a;
+color:white;
+padding:14px 22px;
+border-radius:8px;
+font-family:'Montserrat', sans-serif;
+font-size:14px;
+box-shadow:0 8px 20px rgba(0,0,0,0.4);
+opacity:0;
+transform:translateY(30px);
+transition:all 0.4s ease;
+z-index:9999;
+}
+
+.toast.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* FOOTER */
+
+footer{
+background:#0b2a55;
+padding:60px 40px;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:30px;
+}
+
+.footer-grid h4{
+margin-bottom:15px;
+}
+
+.footer-grid p{
+font-size:14px;
+margin-bottom:8px;
+color:#ddd;
+}
+
+.email-box{
+display:flex;
+margin-top:10px;
+}
+
+.email-box input{
+padding:8px;
+border:none;
+}
+
+.email-box button{
+background:#ffd400;
+border:none;
+padding:8px 12px;
+cursor:pointer;
+}
+
+.footer-grid a{
+display:block;
+font-size:14px;
+margin-bottom:8px;
+color:#ddd;
+text-decoration:none;
+}
+
+.footer-grid a:hover{
+text-decoration:underline;
+}
+
+/* MOBILE */
+
+@media(max-width:1200px){
+.products{
+grid-template-columns:repeat(3,1fr);
+}
+}
+
+@media(max-width:1000px){
+
+.footer-grid{
+display:flex;
+justify-content:space-between;
+max-width:1100px;
+margin:auto;
+gap:60px;
+}
+
+.bigtext{
+font-size:50px;
+}
+
+.footer-grid div{
+display:flex;
+flex-direction:column;
+}
+
+.footer-grid h4{
+margin-bottom:15px;
+font-size:16px;
+}
+
+.footer-grid a{
+display:block;
+font-size:14px;
+margin-bottom:10px;
+color:#ddd;
+text-decoration:none;
+line-height:1.4;
+}
+}
+
+@media(max-width:700px){
+.products{
+grid-template-columns:repeat(2,1fr);
+}
+}
+
+</style>
+<link rel="stylesheet" href="cart-system.css">
+</head>
+
+<body>
+
+<div class="topbar">
+Ingyenes szállítás új vásárlóinknak!
+</div>
+
+<nav class="navbar">
+
+<a class="logo" href="barca.html">
+<img src="img/logo.png">
+<div class="logo-text">
+<span>Official Barca</span>
+<span>Store</span>
+</div>
+</a>
+
+<div class="menu">
+<a href="legnepszerubb.html">Legnépszerűbb</a>
+<div class="has-dropdown edzes-menu">
+<a href="legnepszerubb.html?menu=edzes" class="menu-link">Edzés</a>
+<div class="menu-dropdown edzes-dropdown">
+<div class="menu-col"><h5>Férfi</h5><a href="legnepszerubb.html?menu=edzes&kategoria=ferfi-kabat-pulover">Kabátok és pulóverek</a><a href="legnepszerubb.html?menu=edzes&kategoria=ferfi-polo">Pólók</a><a href="legnepszerubb.html?menu=edzes&kategoria=ferfi-nadrag-rovid">Nadrágok és rövidnadrágok</a><a href="legnepszerubb.html?menu=edzes&kategoria=ferfi-melegito">Melegítők</a></div>
+<div class="menu-col"><h5>Női</h5><a href="legnepszerubb.html?menu=edzes&kategoria=noi-kabat-pulover">Kabátok és pulóverek</a><a href="legnepszerubb.html?menu=edzes&kategoria=noi-polo">Pólók</a><a href="legnepszerubb.html?menu=edzes&kategoria=noi-nadrag-rovid">Nadrágok és rövidnadrágok</a><a href="legnepszerubb.html?menu=edzes&kategoria=noi-melegito">Melegítők</a></div>
+<div class="menu-col"><h5>Gyerekek és babák</h5><a href="legnepszerubb.html?menu=edzes&kategoria=gyerek-kabat-pulover">Kabátok és pulóverek</a><a href="legnepszerubb.html?menu=edzes&kategoria=gyerek-polo">Pólók</a><a href="legnepszerubb.html?menu=edzes&kategoria=gyerek-nadrag-rovid">Nadrágok és rövidnadrágok</a><a href="legnepszerubb.html?menu=edzes&kategoria=gyerek-melegito">Melegítők</a></div>
+</div>
+</div>
+<div class="has-dropdown">
+<a href="#" class="menu-link">Ajándékok</a>
+<div class="menu-dropdown">
+<div class="menu-col"><h5>Férfi</h5><a href="legnepszerubb.html?menu=ajandekok&kategoria=ferfi-pulover">Pulóverek</a><a href="legnepszerubb.html?menu=ajandekok&kategoria=ferfi-polo">Pólók</a><a href="legnepszerubb.html?menu=ajandekok&kategoria=ferfi-nadrag">Nadrágok és rövidnadrágok</a><a href="legnepszerubb.html?menu=ajandekok&kategoria=ferfi-melegito">Melegítők</a><a href="legnepszerubb.html?menu=ajandekok&kategoria=ferfi-kabat">Kabátok</a></div>
+<div class="menu-col"><h5>Gyerekek és babák</h5><a href="legnepszerubb.html?menu=ajandekok&kategoria=gyerek-pulover">Pulóverek</a><a href="legnepszerubb.html?menu=ajandekok&kategoria=gyerek-polo">Pólók</a><a href="legnepszerubb.html?menu=ajandekok&kategoria=gyerek-nadrag">Nadrágok és rövidnadrágok</a><a href="legnepszerubb.html?menu=ajandekok&kategoria=gyerek-melegito">Melegítők</a><a href="legnepszerubb.html?menu=ajandekok&kategoria=babak">Babák</a></div>
+<div class="menu-col"><h5>Női</h5><a href="legnepszerubb.html?menu=ajandekok&kategoria=noi-pulover">Pulóverek</a><a href="legnepszerubb.html?menu=ajandekok&kategoria=noi-polo">Pólók</a><a href="legnepszerubb.html?menu=ajandekok&kategoria=noi-nadrag">Nadrágok és rövidnadrágok</a><a href="legnepszerubb.html?menu=ajandekok&kategoria=noi-melegito">Melegítők</a><a href="legnepszerubb.html?menu=ajandekok&kategoria=noi-kabat">Kabátok</a></div>
+<div class="menu-col"><h5>Kollekciók</h5><a href="legnepszerubb.html?menu=ajandekok&kategoria=aftermatch">Aftermatch kollekció</a><a href="legnepszerubb.html?menu=ajandekok&kategoria=essentials">Essentials kollekció</a><a href="legnepszerubb.html?menu=ajandekok&kategoria=cruyff">Cruyff kollekció</a><a href="legnepszerubb.html?menu=ajandekok&kategoria=retro">Retro kollekció</a><a href="legnepszerubb.html?menu=ajandekok&kategoria=fan">Fan kollekció</a></div>
+</div>
+</div>
+<div class="has-dropdown">
+<a href="mezek.html" class="menu-link">Mezek</a>
+<div class="menu-dropdown">
+<div class="menu-col"><h5>Hazai mez</h5><a href="mezek.html?tipus=hazai">Férfi</a><a href="mezek.html?tipus=hazai">Gyerek</a><a href="mezek.html?tipus=hazai">Női</a></div>
+<div class="menu-col"><h5>Vendég mez</h5><a href="mezek.html?tipus=vendeg">Férfi</a><a href="mezek.html?tipus=vendeg">Gyerek</a><a href="mezek.html?tipus=vendeg">Női</a></div>
+<div class="menu-col"><h5>Harmadikszámú mez</h5><a href="mezek.html?tipus=harmadikszamu">Férfi</a><a href="mezek.html?tipus=harmadikszamu">Gyerek</a><a href="mezek.html?tipus=harmadikszamu">Női</a></div>
+<div class="menu-col"><h5>Kapus mez</h5><a href="mezek.html?tipus=kapus">Férfi</a><a href="mezek.html?tipus=kapus">Gyerek</a><a href="mezek.html?tipus=kapus">Női</a></div>
+</div>
+</div>
+<div class="has-dropdown">
+<a href="#" class="menu-link">Egyéb</a>
+<div class="menu-dropdown">
+<div class="menu-col"><h5>Kiegészítők</h5><a href="legnepszerubb.html?menu=egyeb&kategoria=hatizsak">Hátizsákok és táskák</a><a href="legnepszerubb.html?menu=egyeb&kategoria=fejfedo">Fejfedők</a><a href="legnepszerubb.html?menu=egyeb&kategoria=zokni">Zoknik</a><a href="legnepszerubb.html?menu=egyeb&kategoria=ora-ekszer">Órák és ékszerek</a></div>
+<div class="menu-col"><h5>Szuvenírek</h5><a href="legnepszerubb.html?menu=egyeb&kategoria=sal-zaszlo">Sálak és zászlók</a><a href="legnepszerubb.html?menu=egyeb&kategoria=labda">Labdák</a><a href="legnepszerubb.html?menu=egyeb&kategoria=kulcstarto">Kulcstartók és mágnesek</a><a href="legnepszerubb.html?menu=egyeb&kategoria=jatek">Játékok</a></div>
+<div class="menu-col"><h5>Otthon</h5><a href="legnepszerubb.html?menu=egyeb&kategoria=palack-bogre">Kulacsok és bögrék</a><a href="legnepszerubb.html?menu=egyeb&kategoria=otthoni-kiegeszito">Otthoni kiegészítők</a><a href="legnepszerubb.html?menu=egyeb&kategoria=elektronika">Elektronika</a><a href="legnepszerubb.html?menu=egyeb&kategoria=irodaszer">Irodaszerek</a></div>
+<div class="menu-col"><h5>Szurkolói kiegészítők</h5><a href="legnepszerubb.html?menu=egyeb&kategoria=fan-kiegeszito">Összes szurkolói kiegészítő</a></div>
+</div>
+</div>
+<div class="has-dropdown">
+<a href="#" class="menu-link">Jegyek és utazások</a>
+<div class="menu-dropdown">
+<div class="menu-col"><h5>Meccsjegyek</h5><a href="legnepszerubb.html?menu=jegyek-es-utazasok&kategoria=hazai-meccsek">Hazai mérkőzések</a><a href="legnepszerubb.html?menu=jegyek-es-utazasok&kategoria=idegenbeli-meccsek">Idegenbeli mérkőzések</a><a href="legnepszerubb.html?menu=jegyek-es-utazasok&kategoria=vip">VIP csomagok</a></div>
+<div class="menu-col"><h5>Utazások</h5><a href="legnepszerubb.html?menu=jegyek-es-utazasok&kategoria=meccsutazas">Meccsutazás csomagok</a><a href="legnepszerubb.html?menu=jegyek-es-utazasok&kategoria=stadiontura">Stadiontúrák</a><a href="legnepszerubb.html?menu=jegyek-es-utazasok&kategoria=varoslatas">Barcelonai városlátogatás</a></div>
+</div>
+</div>
+</div>
+
+<div class="nav-actions">
+<button class="cart-toggle" type="button" aria-label="Kosár" title="Kosár">&#128717;<span class="cart-count">0</span></button>
+</div>
+
+</nav>
+
+<div class="title" id="pageTitle">MEZEK</div>
+
+<div class="filters">
+
+<div class="filter" data-filter="type">
+
+Típus ▾
+
+<div class="dropdown">
+
+<div class="collection-top">
+
+<span id="typeCount">0 kiválasztva</span>
+
+<span class="reset" onclick="resetTypes()">Reset</span>
+
+</div>
+
+<label><input type="checkbox" value="hazai"> Hazai</label>
+<label><input type="checkbox" value="vendeg"> Vendég</label>
+<label><input type="checkbox" value="harmadikszamu"> Harmadikszámú</label>
+<label><input type="checkbox" value="kapus"> Kapus</label>
+
+</div>
+
+</div>
+
+<div class="filter" data-filter="collection">
+Kollekció ▾
+<div class="dropdown collection">
+
+<div class="collection-top">
+<span id="collectionCount">0 kiválasztva</span>
+<span class="reset" onclick="resetCollection()">Reset</span>
+</div>
+
+<label><input type="checkbox" value="bajnokok"> Bajnokok Ligája</label>
+<label><input type="checkbox" value="kobe"> Kobe Bryant</label>
+<label><input type="checkbox" value="stadion"> Stadion</label>
+<label><input type="checkbox" value="negyedik"> Negyedik mez</label>
+<label><input type="checkbox" value="match"> Match</label>
+<label><input type="checkbox" value="edzo"> Edző</label>
+<label><input type="checkbox" value="kapus"> Kapus</label>
+<label><input type="checkbox" value="limitalt"> Limitált</label>
+<label><input type="checkbox" value="jatekos"> Játékos verzió</label>
+
+</div>
+</div>
+
+<div class="filter" data-filter="price">
+
+Ár ▾
+
+<div class="dropdown price-dropdown">
+
+<div class="collection-top">
+
+<span id="priceCount">120000 Ft</span>
+
+<span class="reset" onclick="resetPrice()">Reset</span>
+
+</div>
+
+<div class="price-values">
+
+<span>0 Ft</span>
+<span id="maxLabel">120000 Ft</span>
+
+</div>
+
+<input type="range"
+id="priceRange"
+min="0"
+max="120000"
+value="120000"
+step="1000">
+
+</div>
+
+</div>
+
+<div class="orderby">
+
+<div class="orderby-button" id="orderBtn">
+Rendezés: <span id="orderText">Kiemelt</span> ▾
+</div>
+
+<div class="orderby-menu">
+<div onclick="setOrder('featured')">Kiemelt</div>
+<div onclick="setOrder('priceAsc')">Ár szerint növekvő</div>
+<div onclick="setOrder('priceDesc')">Ár szerint csökkenő</div>
+</div>
+
+</div>
+
+</div>
+
+<div class="products" id="products"></div>
+
+<div id="toast" class="toast"></div>
+
+<div class="bigtext">
+FC BARCELONA
+</div>
+<footer>
+
+<div class="footer-grid">
+
+<div>
+<h4>Legfrissebb hírek</h4>
+<p>Iratkozz fel hírlevelünkre</p>
+
+<div class="email-box">
+<input id="emailInput" placeholder="Email">
+<button onclick="subscribe()">→</button>
+</div>
+
+<p style="margin-top:10px;font-size:12px">
+Ha megadod az email címed, hírleveleket fogsz kapni a Barcelona Store-tól.
+</p>
+</div>
+
+<div>
+<h4>Segítség és információ</h4>
+<a href="rendeles.html">Rendelés állapota</a>
+<a href="visszakuldes.html">Visszaküldési portál</a>
+<a href="telefon.html">Segítség</a>
+<a href="segitseg.html">Rendelések</a>
+<a href="segitseg.html">Szállítás és kézbesítés</a>
+<a href="segitseg.html">Visszatérítések</a>
+<a href="segitseg.html">Fizetési lehetőségek</a>
+<a href="kapcsolat.html">Kapcsolat</a>
+</div>
+
+<div>
+<h4>Hasznos linkek</h4>
+<a href="https://apps.apple.com/us/app/fc-barcelona-official-app/id343196080">FC Barcelona iOS alkalmazás</a>
+<a href="#">FC Barcelona Android alkalmazás</a>
+</div>
+
+<div>
+<h4>Közösségi média</h4>
+<a href="https://www.facebook.com/fcbarcelona/">Facebook</a>
+<a href="https://x.com/fcbarcelona_es">Twitter</a>
+<a href="https://open.spotify.com/user/31gorrj76f2m3wczoifm6f6tbn3q?si=a20bf0c076684729&nd=1">Spotify</a>
+<a href="https://www.youtube.com/user/fcbarcelona">YouTube</a>
+<a href="https://www.instagram.com/fcbarcelona/">Instagram FC Barcelona</a>
+<a href="https://www.instagram.com/barcastore/">Instagram Barca Store</a>
+<a href="https://www.tiktok.com/@fcbarcelona?is_from_webapp=1&sender_device=pc">TikTok</a>
+</div>
+
+<div>
+<h4>Adatvédelem</h4>
+<a href="adatvedelem.html">Adatvédelmi szabályzat</a>
+<a href="adatvedelem.html">Vásárlási feltételek</a>
+<a href="adatvedelem.html">Süti szabályzat</a>
+<a href="adatvedelem.html">Akadálymentesség</a>
+</div>
+
+</div>
+
+</footer>
+
+<script>
+
+const products=[
+{id:"barca-01",name:"FC Barcelona Hazai Mez 2025/26 - Bajnokok Ligája",price:79990,type:"hazai",collection:"bajnokok",img:"img/product1.webp"},
+{id:"barca-02",name:"FC Barcelona x Kobe Bryant Pre-Match Mez 2025/26",price:66990,type:"vendeg",collection:"kobe",img:"img/product2.webp"},
+{id:"barca-03",name:"FC Barcelona Stadion Mez - Férfi 2025/26",price:69990,type:"hazai",collection:"stadion",img:"img/product3.webp"},
+{id:"barca-04",name:"FC Barcelona Negyedik Számú Mez 2025/26",price:109990,type:"harmadikszamu",collection:"negyedik",img:"img/product4.webp"},
+{id:"barca-05",name:"FC Barcelona Vendég Mez Hosszú Ujjú 2025/26",price:74990,type:"vendeg",collection:"match",img:"img/product5.webp"},
+{id:"barca-06",name:"FC Barcelona Edzőmez 2025/26",price:39990,type:"vendeg",collection:"edzo",img:"img/product6.webp"},
+{id:"barca-07",name:"FC Barcelona Hazai Meccsmez 2025/26",price:64990,type:"hazai",collection:"match",img:"img/product7.webp"},
+{id:"barca-08",name:"FC Barcelona Idegenbeli Meccsmez 2025/26",price:64990,type:"vendeg",collection:"match",img:"img/product8.webp"},
+{id:"barca-09",name:"FC Barcelona Harmadik Számú Meccsmez 2025/26",price:64990,type:"harmadikszamu",collection:"match",img:"img/product9.webp"},
+{id:"barca-10",name:"FC Barcelona Kapus Mez 2025/26",price:59990,type:"kapus",collection:"kapus",img:"img/product10.webp"},
+{id:"barca-17",name:"FC Barcelona Limitált Mez - Különkiadás",price:89990,type:"harmadikszamu",collection:"limitalt",img:"img/product17.webp"},
+{id:"barca-18",name:"FC Barcelona Játékos Verzió Meccsmez",price:99990,type:"hazai",collection:"jatekos",img:"img/product18.webp"}
+]
+
+let orderType="featured"
+
+function render(list){
+
+let html=""
+
+list.forEach(p=>{
+
+html+=`
+<a class="product-link" href="termek.html?id=${p.id}">
+<div class="product">
+<img src="${p.img}">
+<div class="product-info">
+<h4>FC BARCELONA</h4>
+<p>${p.name}</p>
+<p class="price">${p.price} Ft</p>
+</div>
+</div>
+</a>
+`
+
+})
+
+document.getElementById("products").innerHTML=html
+
+if(window.CartSystem && typeof window.CartSystem.animateProducts==="function"){
+window.CartSystem.animateProducts("#products .product")
+}
+
+}
+
+render(products)
+
+/* FILTER DROPDOWN */
+
+const filters=document.querySelectorAll(".filter")
+
+filters.forEach(filter=>{
+filter.addEventListener("click",(e)=>{
+e.stopPropagation()
+
+if(e.target.closest(".dropdown")){
+return
+}
+
+filters.forEach(f=>{
+if(f!==filter)f.classList.remove("active")
+})
+filter.classList.toggle("active")
+})
+})
+
+document.addEventListener("click",()=>{
+filters.forEach(f=>f.classList.remove("active"))
+document.querySelector(".orderby").classList.remove("active")
+})
+
+/* ORDER */
+
+const orderBtn=document.getElementById("orderBtn")
+const orderBox=document.querySelector(".orderby")
+
+orderBtn.addEventListener("click",(e)=>{
+e.stopPropagation()
+orderBox.classList.toggle("active")
+})
+
+function setOrder(type){
+
+orderType=type
+orderBox.classList.remove("active")
+
+if(type==="featured")document.getElementById("orderText").innerText="Kiemelt"
+if(type==="priceAsc")document.getElementById("orderText").innerText="Ár növekvő"
+if(type==="priceDesc")document.getElementById("orderText").innerText="Ár csökkenő"
+
+applyFilters()
+
+}
+
+/* SLIDER */
+
+const slider=document.getElementById("priceRange")
+document.getElementById("priceRange").addEventListener("pointerdown",(e)=>{
+
+e.stopPropagation()
+
+})
+
+function updatePriceDisplay(){
+const text=slider.value+" Ft"
+document.getElementById("maxLabel").innerText=text
+document.getElementById("priceCount").innerText=text
+}
+
+slider.addEventListener("input",()=>{
+updatePriceDisplay()
+applyFilters()
+})
+
+function resetPrice(){
+slider.value=slider.max
+updatePriceDisplay()
+applyFilters()
+}
+
+/* COLLECTION COUNT */
+
+const collectionInputs=document.querySelectorAll('[data-filter="collection"] input')
+
+collectionInputs.forEach(el=>{
+el.addEventListener("change",()=>{
+const checked=[...collectionInputs].filter(x=>x.checked)
+document.getElementById("collectionCount").innerText=checked.length+" kiválasztva"
+applyFilters()
+})
+})
+
+function resetCollection(){
+
+collectionInputs.forEach(el=>el.checked=false)
+document.getElementById("collectionCount").innerText="0 kiválasztva"
+applyFilters()
+
+}
+
+/* FILTER LOGIC */
+
+function applyFilters(){
+
+let filtered=[...products]
+
+const types=[...document.querySelectorAll('[data-filter="type"] input:checked')].map(el=>el.value)
+
+if(types.length>0){
+filtered=filtered.filter(p=>types.includes(p.type))
+}
+
+const col=[...collectionInputs].filter(x=>x.checked).map(x=>x.value)
+
+if(col.length>0){
+filtered=filtered.filter(p=>col.includes(p.collection))
+}
+
+const maxPrice=slider.value
+
+filtered=filtered.filter(p=>p.price<=maxPrice)
+
+if(orderType==="priceAsc"){
+filtered.sort((a,b)=>a.price-b.price)
+}
+
+if(orderType==="priceDesc"){
+filtered.sort((a,b)=>b.price-a.price)
+}
+
+render(filtered)
+
+}
+
+document.querySelectorAll('[data-filter="type"] input').forEach(el=>{
+el.addEventListener("change",applyFilters)
+})
+
+document.querySelectorAll('.dropdown input').forEach(el=>{
+
+el.addEventListener("click",(e)=>{
+
+e.stopPropagation()
+
+})
+
+})
+
+const typeInputs=document.querySelectorAll('[data-filter="type"] input')
+
+const typeLabelByKey={
+hazai:"Hazai",
+vendeg:"Vendég",
+harmadikszamu:"Harmadikszámú",
+kapus:"Kapus"
+}
+
+typeInputs.forEach(el=>{
+
+el.addEventListener("change",()=>{
+
+const checked=[...typeInputs].filter(x=>x.checked)
+
+document.getElementById("typeCount").innerText=
+checked.length+" kiválasztva"
+
+applyFilters()
+
+})
+
+})
+
+function resetTypes(){
+
+typeInputs.forEach(el=>el.checked=false)
+
+document.getElementById("typeCount").innerText="0 kiválasztva"
+
+applyFilters()
+
+}
+
+function applyTypeFromQuery(){
+const params=new URLSearchParams(window.location.search)
+const presetType=params.get("tipus")
+
+if(!presetType){
+return
+}
+
+const input=document.querySelector(`[data-filter="type"] input[value="${presetType}"]`)
+
+if(!input){
+return
+}
+
+typeInputs.forEach(el=>el.checked=false)
+input.checked=true
+document.getElementById("typeCount").innerText="1 kiválasztva"
+
+const label=typeLabelByKey[presetType]
+if(label){
+document.getElementById("pageTitle").innerText="MEZEK - "+label.toUpperCase()
+}
+
+applyFilters()
+}
+
+applyTypeFromQuery()
+
+function showToast(text){
+
+const toast=document.getElementById("toast")
+toast.innerText=text
+toast.classList.add("show")
+
+setTimeout(()=>{
+toast.classList.remove("show")
+},3000)
+
+}
+
+function subscribe(){
+
+const email=document.getElementById("emailInput").value
+
+if(email.trim()===""){
+showToast("Kérlek add meg az email címed!")
+}
+else{
+showToast("Sikeres feliratkozás! Hamarosan értesítünk az új FC Barcelona termékekről.")
+}
+
+}
+
+</script>
+
+<script src="cart-system.js" defer></script>
+
+</body>
+</html>

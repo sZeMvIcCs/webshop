@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kapcsolat - Barca Store</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="cart-system.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, Helvetica, sans-serif}
+body{background:#f5f5f5;color:#1a2c50}
+.topbar{background:linear-gradient(90deg,#c11,#6b5cff);text-align:center;padding:10px;font-size:14px;color:#fff}
+.navbar{background:#07244a;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:15px 40px;position:sticky;top:0;z-index:1000}
+.logo{display:flex;align-items:center;gap:10px}
+.logo img{width:40px}
+.logo-text{display:flex;flex-direction:column;font-weight:bold;font-size:14px;line-height:1.1}
+.menu{display:flex;gap:30px;font-weight:600;justify-content:center}
+.menu a{color:#fff;text-decoration:none}
+.menu a:hover{color:#ffdd00}
+
+.contact-hero{max-width:1250px;margin:34px auto 10px;padding:0 24px}
+.contact-hero h1{font-family:'Bebas Neue',sans-serif;font-size:88px;letter-spacing:2px;color:#07244a;line-height:0.95}
+.contact-hero p{margin-top:12px;color:#445a82;max-width:760px}
+
+.contact-layout{max-width:1250px;margin:20px auto 50px;padding:0 24px;display:grid;grid-template-columns:1fr 1.1fr;gap:24px}
+.info-card,.form-card{background:#fff;border:1px solid #d8e0ef;border-radius:14px;padding:22px;box-shadow:0 10px 24px rgba(10,28,64,0.08)}
+.info-card h2,.form-card h2{font-family:'Bebas Neue',sans-serif;letter-spacing:1px;color:#07244a;font-size:38px;margin-bottom:12px}
+.info-card p{color:#435a83;line-height:1.5;margin-bottom:14px}
+.contact-points{display:grid;gap:10px;margin-top:8px}
+.contact-point{background:#f2f6ff;border-radius:10px;padding:12px}
+.contact-point strong{display:block;color:#1d3360;margin-bottom:3px}
+.contact-point span{color:#435a83;font-size:14px}
+
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
+.field label{font-size:12px;color:#506995;font-weight:700}
+.field input,.field select,.field textarea{width:100%;padding:12px;border:1px solid #c7d4ea;border-radius:8px;font-size:14px;color:#1a2c50;background:#fff}
+.field textarea{height:140px;resize:none}
+.full{grid-column:1 / -1}
+.form-card button{width:100%;background:#f2c134;border:none;padding:14px;font-weight:700;cursor:pointer;border-radius:8px;color:#1b1b1b}
+.form-card button:hover{background:#ffd400}
+.success{margin-top:12px;background:#1e7f3b;color:#fff;padding:12px;border-radius:8px;display:none}
+
+.bigtext{text-align:center;font-size:90px;font-weight:bold;padding:80px 0;color:#07244a}
+footer{background:#0b2a55;padding:60px 40px;color:#fff}
+.footer-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:30px}
+.footer-grid h4{margin-bottom:15px}
+.footer-grid a{display:block;font-size:14px;margin-bottom:8px;color:#ddd;text-decoration:none}
+.footer-grid a:hover{text-decoration:underline}
+.footer-grid p{font-size:14px;margin-bottom:8px;color:#ddd}
+.email-box{display:flex;margin-top:10px}
+.email-box input{padding:8px;border:none;outline:none}
+.email-box button{background:#ffd400;border:none;padding:8px 12px;cursor:pointer;font-weight:bold}
+
+.toast{position:fixed;bottom:30px;right:30px;background:#07244a;color:#fff;padding:14px 22px;border-radius:8px;font-size:14px;box-shadow:0 8px 20px rgba(0,0,0,0.4);opacity:0;transform:translateY(30px);transition:all .4s ease;z-index:9999}
+.toast.show{opacity:1;transform:translateY(0)}
+
+@media(max-width:1000px){
+.contact-layout{grid-template-columns:1fr}
+.contact-hero h1{font-size:62px}
+.footer-grid{grid-template-columns:repeat(2,1fr)}
+.bigtext{font-size:58px;padding:50px 10px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">Ingyenes szállítás új vásárlóinknak!</div>
+<div id="toast" class="toast"></div>
+
+<nav class="navbar">
+<a class="logo" href="barca.html">
+<img src="img/logo.png" alt="Logo">
+<div class="logo-text">
+<span>Official Barca</span>
+<span>Store</span>
+</div>
+</a>
+
+<div class="menu">
+<a href="barca.html">Főoldal</a>
+<a href="legnepszerubb.html">Legnépszerűbb</a>
+<div class="has-dropdown">
+<a href="mezek.html" class="menu-link">Mezek</a>
+<div class="menu-dropdown">
+<div class="menu-col">
+<h5>Hazai mez</h5>
+<a href="mezek.html?tipus=hazai">Férfi</a>
+<a href="mezek.html?tipus=hazai">Gyerek</a>
+<a href="mezek.html?tipus=hazai">Női</a>
+</div>
+<div class="menu-col">
+<h5>Vendég mez</h5>
+<a href="mezek.html?tipus=vendeg">Férfi</a>
+<a href="mezek.html?tipus=vendeg">Gyerek</a>
+<a href="mezek.html?tipus=vendeg">Női</a>
+</div>
+<div class="menu-col">
+<h5>Harmadikszámú mez</h5>
+<a href="mezek.html?tipus=harmadikszamu">Férfi</a>
+<a href="mezek.html?tipus=harmadikszamu">Gyerek</a>
+<a href="mezek.html?tipus=harmadikszamu">Női</a>
+</div>
+<div class="menu-col">
+<h5>Kapus mez</h5>
+<a href="mezek.html?tipus=kapus">Férfi</a>
+<a href="mezek.html?tipus=kapus">Gyerek</a>
+<a href="mezek.html?tipus=kapus">Női</a>
+</div>
+</div>
+</div>
+<a href="segitseg.html">Segítség</a>
+</div>
+
+<div class="nav-actions">
+<button class="cart-toggle" type="button" aria-label="Kosár" title="Kosár">&#128717;<span class="cart-count">0</span></button>
+</div>
+</nav>
+
+<section class="contact-hero">
+<h1>KAPCSOLAT</h1>
+<p>Ha nem találtad meg a választ a kérdésedre, vedd fel velünk a kapcsolatot. Ügyfélszolgálatunk rövid időn belül válaszol.</p>
+</section>
+
+<section class="contact-layout">
+<div class="info-card">
+<h2>ELÉRHETŐSÉGEK</h2>
+<p>Online ügyfélszolgálatunk a rendelésekkel, szállítással, visszaküldéssel és termékekkel kapcsolatos kérdésekben segít.</p>
+<div class="contact-points">
+<div class="contact-point"><strong>Email</strong><span>support@barcastore.hu</span></div>
+<div class="contact-point"><strong>Telefon</strong><span>+36 1 555 1234 (H-P: 9:00-17:00)</span></div>
+<div class="contact-point"><strong>Válaszidő</strong><span>Általában 1 munkanapon belül</span></div>
+</div>
+</div>
+
+<div class="form-card">
+<h2>ÍRJ NEKÜNK</h2>
+<form id="contactForm" onsubmit="sendMessage(event)">
+<div class="form-grid">
+<div class="field">
+<label for="vezeteknev">Vezetéknév</label>
+<input id="vezeteknev" required placeholder="Vezetéknév">
+</div>
+<div class="field">
+<label for="keresztnev">Keresztnév</label>
+<input id="keresztnev" required placeholder="Keresztnév">
+</div>
+<div class="field full">
+<label for="email">Email cím</label>
+<input id="email" required type="email" placeholder="email@pelda.hu">
+</div>
+<div class="field full">
+<label for="tema">Téma</label>
+<select id="tema">
+<option>Rendeléssel kapcsolatos kérdés</option>
+<option>Szállítás</option>
+<option>Visszaküldés</option>
+<option>Fizetés</option>
+<option>Egyéb</option>
+</select>
+</div>
+<div class="field full">
+<label for="uzenet">Üzenet</label>
+<textarea id="uzenet" required placeholder="Írd ide az üzenetedet..."></textarea>
+</div>
+<div class="field full">
+<button type="submit">ÜZENET KÜLDÉSE</button>
+<div class="success" id="successMessage">Üzenetedet elküldtük. Hamarosan jelentkezünk.</div>
+</div>
+</div>
+</form>
+</div>
+</section>
+
+<div class="bigtext">FC BARCELONA</div>
+
+<footer>
+<div class="footer-grid">
+<div>
+<h4>Legfrissebb hírek</h4>
+<p>Iratkozz fel hírlevelünkre</p>
+<div class="email-box">
+<input id="emailInput" placeholder="Email">
+<button onclick="subscribe()">→</button>
+</div>
+<p style="margin-top:10px;font-size:12px">Ha megadod az email címed, hírleveleket fogsz kapni a Barcelona Store-tól.</p>
+</div>
+
+<div>
+<h4>Segítség és információ</h4>
+<a href="rendeles.html">Rendelés állapota</a>
+<a href="visszakuldes.html">Visszaküldési portál</a>
+<a href="telefon.html">Segítség</a>
+<a href="segitseg.html">Rendelések</a>
+<a href="segitseg.html">Szállítás és kézbesítés</a>
+<a href="segitseg.html">Visszatérítések</a>
+<a href="segitseg.html">Fizetési lehetőségek</a>
+<a href="kapcsolat.html">Kapcsolat</a>
+</div>
+
+<div>
+<h4>Hasznos linkek</h4>
+<a href="https://apps.apple.com/us/app/fc-barcelona-official-app/id343196080">FC Barcelona iOS alkalmazás</a>
+<a href="#">FC Barcelona Android alkalmazás</a>
+</div>
+
+<div>
+<h4>Közösségi média</h4>
+<a href="https://www.facebook.com/fcbarcelona/">Facebook</a>
+<a href="https://x.com/fcbarcelona_es">Twitter</a>
+<a href="https://open.spotify.com/">Spotify</a>
+<a href="https://www.youtube.com/user/fcbarcelona">YouTube</a>
+<a href="https://www.instagram.com/fcbarcelona/">Instagram FC Barcelona</a>
+<a href="https://www.instagram.com/barcastore/">Instagram Barca Store</a>
+<a href="https://www.tiktok.com/@fcbarcelona">TikTok</a>
+</div>
+
+<div>
+<h4>Adatvédelem</h4>
+<a href="adatvedelem.html">Adatvédelmi szabályzat</a>
+<a href="adatvedelem.html">Vásárlási feltételek</a>
+<a href="adatvedelem.html">Süti szabályzat</a>
+<a href="adatvedelem.html">Akadálymentesség</a>
+</div>
+</div>
+</footer>
+
+<script>
+function sendMessage(e){
+e.preventDefault();
+document.getElementById("successMessage").style.display="block";
+document.getElementById("contactForm").reset();
+}
+
+function showToast(text){
+const toast=document.getElementById("toast");
+toast.innerText=text;
+toast.classList.add("show");
+setTimeout(()=>{toast.classList.remove("show");},3000);
+}
+
+function subscribe(){
+const email=document.getElementById("emailInput").value;
+if(email.trim()===""){
+showToast("Kérlek add meg az email címed!");
+}else{
+showToast("Sikeres feliratkozás! Hamarosan értesítünk az új FC Barcelona termékekről.");
+}
+}
+</script>
+
+<script src="cart-system.js" defer></script>
+</body>
+</html>
