@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="hu">
 <head>
 <meta charset="UTF-8">
@@ -467,7 +467,7 @@ Ingyenes szállítás új vásárlóinknak!
 </div>
 </div>
 <div class="has-dropdown">
-<a href="#" class="menu-link">Ajándékok</a>
+<a href="legnepszerubb.html?menu=ajandekok" class="menu-link">Ajándékok</a>
 <div class="menu-dropdown">
 <div class="menu-col">
 <h5>Férfi</h5>
@@ -533,7 +533,7 @@ Ingyenes szállítás új vásárlóinknak!
 </div>
 </div>
 <div class="has-dropdown">
-<a href="#" class="menu-link">Egyéb</a>
+<a href="legnepszerubb.html?menu=egyeb" class="menu-link">Egyéb</a>
 <div class="menu-dropdown">
 <div class="menu-col">
 <h5>Kiegészítők</h5>
@@ -563,19 +563,11 @@ Ingyenes szállítás új vásárlóinknak!
 </div>
 </div>
 <div class="has-dropdown">
-<a href="#" class="menu-link">Jegyek és utazások</a>
+<a href="legnepszerubb.html?menu=jegyek-es-utazasok" class="menu-link">Jegyek és utazások</a>
 <div class="menu-dropdown">
 <div class="menu-col">
-<h5>Meccsjegyek</h5>
-<a href="legnepszerubb.html?menu=jegyek-es-utazasok&kategoria=hazai-meccsek">Hazai mérkőzések</a>
-<a href="legnepszerubb.html?menu=jegyek-es-utazasok&kategoria=idegenbeli-meccsek">Idegenbeli mérkőzések</a>
-<a href="legnepszerubb.html?menu=jegyek-es-utazasok&kategoria=vip">VIP csomagok</a>
-</div>
-<div class="menu-col">
-<h5>Utazások</h5>
-<a href="legnepszerubb.html?menu=jegyek-es-utazasok&kategoria=meccsutazas">Meccsutazás csomagok</a>
-<a href="legnepszerubb.html?menu=jegyek-es-utazasok&kategoria=stadiontura">Stadiontúrák</a>
-<a href="legnepszerubb.html?menu=jegyek-es-utazasok&kategoria=varoslatas">Barcelonai városlátogatás</a>
+<h5>Meccsek</h5>
+<a href="legnepszerubb.html?menu=jegyek-es-utazasok">Meccsek</a>
 </div>
 </div>
 </div>
@@ -772,27 +764,140 @@ const products=[
 {id:"edzes-noi-nadrag-01",name:"Női tréning nadrág FC Barcelona 25/26",price:42990,type:"pulover",collection:"core",img:"img/ngtraining1.webp",menu:"edzes",kategoria:"noi-nadrag-rovid"},
 {id:"edzes-noi-nadrag-02",name:"Női tréning rövidnadrág FC Barcelona 25/26",price:31990,type:"pulover",collection:"core",img:"img/ngtraining4.webp",menu:"edzes",kategoria:"noi-nadrag-rovid"},
 {id:"edzes-noi-melegito-01",name:"Női melegítő felső FC Barcelona 25/26",price:49990,type:"pulover",collection:"core",img:"img/nttraining1.webp",menu:"edzes",kategoria:"noi-melegito"},
-{id:"edzes-gyerek-kp-01",name:"Junior tréning pulóver FC Barcelona 25/26",price:39990,type:"pulover",collection:"core",img:"https://picsum.photos/seed/gyerek-kp-01/900/1200",menu:"edzes",kategoria:"gyerek-kabat-pulover"},
-{id:"edzes-gyerek-kp-02",name:"Junior anthem kabát FC Barcelona 25/26",price:43990,type:"dzseki",collection:"core",img:"https://picsum.photos/seed/gyerek-kp-02/900/1200",menu:"edzes",kategoria:"gyerek-kabat-pulover"},
-{id:"edzes-gyerek-kp-03",name:"Junior third kit tréning felső FC Barcelona 25/26",price:41990,type:"pulover",collection:"core",img:"https://picsum.photos/seed/gyerek-kp-03/900/1200",menu:"edzes",kategoria:"gyerek-kabat-pulover"},
-{id:"edzes-gyerek-kp-04",name:"Junior zip kabát FC Barcelona 25/26",price:44990,type:"dzseki",collection:"core",img:"https://picsum.photos/seed/gyerek-kp-04/900/1200",menu:"edzes",kategoria:"gyerek-kabat-pulover"},
-{id:"edzes-gyerek-polo-01",name:"Junior tréning póló FC Barcelona 25/26",price:29990,type:"polo",collection:"core",img:"https://picsum.photos/seed/gyerek-polo-01/900/1200",menu:"edzes",kategoria:"gyerek-polo"},
-{id:"edzes-gyerek-polo-02",name:"Junior pre-match póló FC Barcelona 25/26",price:32990,type:"polo",collection:"core",img:"https://picsum.photos/seed/gyerek-polo-02/900/1200",menu:"edzes",kategoria:"gyerek-polo"},
-{id:"edzes-gyerek-polo-03",name:"Junior fourth kit póló FC Barcelona 25/26",price:31990,type:"polo",collection:"core",img:"https://picsum.photos/seed/gyerek-polo-03/900/1200",menu:"edzes",kategoria:"gyerek-polo"},
-{id:"edzes-gyerek-polo-04",name:"Junior Kobe póló FC Barcelona 25/26",price:34990,type:"polo",collection:"core",img:"https://picsum.photos/seed/gyerek-polo-04/900/1200",menu:"edzes",kategoria:"gyerek-polo"},
-{id:"edzes-gyerek-nadrag-01",name:"Junior tréning nadrág FC Barcelona 25/26",price:33990,type:"pulover",collection:"core",img:"https://picsum.photos/seed/gyerek-nadrag-01/900/1200",menu:"edzes",kategoria:"gyerek-nadrag-rovid"},
-{id:"edzes-gyerek-nadrag-02",name:"Junior tréning rövidnadrág FC Barcelona 25/26",price:24990,type:"pulover",collection:"core",img:"https://picsum.photos/seed/gyerek-nadrag-02/900/1200",menu:"edzes",kategoria:"gyerek-nadrag-rovid"},
-{id:"edzes-gyerek-nadrag-03",name:"Junior slim fit nadrág FC Barcelona 25/26",price:35990,type:"pulover",collection:"core",img:"https://picsum.photos/seed/gyerek-nadrag-03/900/1200",menu:"edzes",kategoria:"gyerek-nadrag-rovid"},
-{id:"edzes-gyerek-nadrag-04",name:"Junior third kit nadrág FC Barcelona 25/26",price:36990,type:"pulover",collection:"core",img:"https://picsum.photos/seed/gyerek-nadrag-04/900/1200",menu:"edzes",kategoria:"gyerek-nadrag-rovid"},
-{id:"edzes-gyerek-melegito-01",name:"Junior melegítő felső FC Barcelona 25/26",price:42990,type:"pulover",collection:"core",img:"https://picsum.photos/seed/gyerek-melegito-01/900/1200",menu:"edzes",kategoria:"gyerek-melegito"},
-{id:"edzes-gyerek-melegito-02",name:"Junior melegítő szett FC Barcelona 25/26",price:45990,type:"pulover",collection:"core",img:"https://picsum.photos/seed/gyerek-melegito-02/900/1200",menu:"edzes",kategoria:"gyerek-melegito"},
-{id:"edzes-gyerek-melegito-03",name:"Junior tracksuit FC Barcelona 25/26",price:49990,type:"pulover",collection:"core",img:"https://picsum.photos/seed/gyerek-melegito-03/900/1200",menu:"edzes",kategoria:"gyerek-melegito"},
-{id:"edzes-gyerek-melegito-04",name:"Baby tracksuit FC Barcelona 25/26",price:39990,type:"pulover",collection:"core",img:"https://picsum.photos/seed/gyerek-melegito-04/900/1200",menu:"edzes",kategoria:"gyerek-melegito"},
+{id:"edzes-gyerek-kp-01",name:"Junior tréning pulóver FC Barcelona 25/26",price:39990,type:"pulover",collection:"core",img:"img/pulover1.webp",menu:"edzes",kategoria:"gyerek-kabat-pulover"},
+{id:"edzes-gyerek-kp-02",name:"Junior anthem kabát FC Barcelona 25/26",price:43990,type:"dzseki",collection:"core",img:"img/pulover2.webp",menu:"edzes",kategoria:"gyerek-kabat-pulover"},
+{id:"edzes-gyerek-kp-03",name:"Junior third kit tréning felső FC Barcelona 25/26",price:41990,type:"pulover",collection:"core",img:"img/pulover3.webp",menu:"edzes",kategoria:"gyerek-kabat-pulover"},
+{id:"edzes-gyerek-kp-04",name:"Junior zip kabát FC Barcelona 25/26",price:44990,type:"dzseki",collection:"core",img:"img/pulover4.webp",menu:"edzes",kategoria:"gyerek-kabat-pulover"},
+{id:"edzes-gyerek-polo-01",name:"Junior tréning póló FC Barcelona 25/26",price:29990,type:"polo",collection:"core",img:"img/etraining1.webp",menu:"edzes",kategoria:"gyerek-polo"},
+{id:"edzes-gyerek-polo-02",name:"Junior pre-match póló FC Barcelona 25/26",price:32990,type:"polo",collection:"core",img:"img/etraining2.webp",menu:"edzes",kategoria:"gyerek-polo"},
+{id:"edzes-gyerek-polo-03",name:"Junior fourth kit póló FC Barcelona 25/26",price:31990,type:"polo",collection:"core",img:"img/etraining3.webp",menu:"edzes",kategoria:"gyerek-polo"},
+{id:"edzes-gyerek-polo-04",name:"Junior Kobe póló FC Barcelona 25/26",price:34990,type:"polo",collection:"core",img:"img/etraining4.webp",menu:"edzes",kategoria:"gyerek-polo"},
+{id:"edzes-gyerek-nadrag-01",name:"Junior tréning nadrág FC Barcelona 25/26",price:33990,type:"pulover",collection:"core",img:"img/gtraining1.webp",menu:"edzes",kategoria:"gyerek-nadrag-rovid"},
+{id:"edzes-gyerek-nadrag-02",name:"Junior tréning rövidnadrág FC Barcelona 25/26",price:24990,type:"pulover",collection:"core",img:"img/gtraining2.webp",menu:"edzes",kategoria:"gyerek-nadrag-rovid"},
+{id:"edzes-gyerek-nadrag-03",name:"Junior slim fit nadrág FC Barcelona 25/26",price:35990,type:"pulover",collection:"core",img:"img/gtraining3.webp",menu:"edzes",kategoria:"gyerek-nadrag-rovid"},
+{id:"edzes-gyerek-nadrag-04",name:"Junior third kit nadrág FC Barcelona 25/26",price:36990,type:"pulover",collection:"core",img:"img/gtraining4.webp",menu:"edzes",kategoria:"gyerek-nadrag-rovid"},
+{id:"edzes-gyerek-melegito-01",name:"Junior melegítő felső FC Barcelona 25/26",price:42990,type:"pulover",collection:"core",img:"img/ttraining1.webp",menu:"edzes",kategoria:"gyerek-melegito"},
+{id:"edzes-gyerek-melegito-02",name:"Junior melegítő szett FC Barcelona 25/26",price:45990,type:"pulover",collection:"core",img:"img/ttraining2.webp",menu:"edzes",kategoria:"gyerek-melegito"},
+{id:"edzes-gyerek-melegito-03",name:"Junior tracksuit FC Barcelona 25/26",price:49990,type:"pulover",collection:"core",img:"img/ttraining3.webp",menu:"edzes",kategoria:"gyerek-melegito"},
+{id:"edzes-gyerek-melegito-04",name:"Baby tracksuit FC Barcelona 25/26",price:39990,type:"pulover",collection:"core",img:"img/ttraining4.webp",menu:"edzes",kategoria:"gyerek-melegito"},
 {id:"sapka",name:"NEW ERA x FC Barcelona sapka",price:9990,type:"sapka",collection:"fan",img:"img/sapka1.webp",menu:"egyeb",kategoria:"fejfedo"},
 {id:"hatizsak",name:"Barca Hátizsák",price:19990,type:"hatizsak",collection:"topps",img:"img/hatizsak1.webp",menu:"egyeb",kategoria:"hatizsak"},
 {id:"polo",name:"Barca Fehér Póló",price:15990,type:"polo",collection:"atemporal",img:"img/feherpolo1.webp",menu:"ajandekok",kategoria:"ferfi-polo"},
 {id:"retro-polo",name:"Barca Retro Poló",price:17990,type:"polo",collection:"retro",img:"img/retropolo1.webp",menu:"ajandekok",kategoria:"ferfi-polo"},
 {id:"kapucnis-pulover",name:"Barca Fekete Hoodie",price:44990,type:"pulover",collection:"core",img:"img/hoodie1.webp",menu:"ajandekok",kategoria:"ferfi-pulover"},
+
+{id:"aj-ferfi-nadrag-01",name:"FC Barcelona férfi edzőnadrág 25/26",price:32990,type:"pulover",collection:"core",img:"img/gtraining1.webp",menu:"ajandekok",kategoria:"ferfi-nadrag"},
+{id:"aj-ferfi-nadrag-02",name:"FC Barcelona férfi rövidnadrág 25/26",price:26990,type:"pulover",collection:"retro",img:"img/gtraining2.webp",menu:"ajandekok",kategoria:"ferfi-nadrag"},
+{id:"aj-ferfi-nadrag-03",name:"FC Barcelona férfi slim fit nadrág",price:34990,type:"pulover",collection:"core",img:"img/gtraining3.webp",menu:"ajandekok",kategoria:"ferfi-nadrag"},
+
+{id:"aj-ferfi-melegito-01",name:"FC Barcelona férfi melegítő felső 25/26",price:46990,type:"pulover",collection:"core",img:"img/ttraining1.webp",menu:"ajandekok",kategoria:"ferfi-melegito"},
+{id:"aj-ferfi-melegito-02",name:"FC Barcelona férfi melegítő szett 25/26",price:59990,type:"pulover",collection:"core",img:"img/ttraining2.webp",menu:"ajandekok",kategoria:"ferfi-melegito"},
+{id:"aj-ferfi-melegito-03",name:"FC Barcelona férfi tracksuit 25/26",price:64990,type:"pulover",collection:"core",img:"img/ttraining3.webp",menu:"ajandekok",kategoria:"ferfi-melegito"},
+
+{id:"aj-ferfi-kabat-01",name:"FC Barcelona férfi széldzseki",price:54990,type:"dzseki",collection:"core",img:"img/jacket2.webp",menu:"ajandekok",kategoria:"ferfi-kabat"},
+{id:"aj-ferfi-kabat-02",name:"FC Barcelona férfi téli kabát",price:79990,type:"dzseki",collection:"core",img:"img/jacket3.webp",menu:"ajandekok",kategoria:"ferfi-kabat"},
+
+{id:"aj-gyerek-pulover-01",name:"FC Barcelona gyerek pulóver 25/26",price:29990,type:"pulover",collection:"core",img:"img/pulover1.webp",menu:"ajandekok",kategoria:"gyerek-pulover"},
+{id:"aj-gyerek-pulover-02",name:"FC Barcelona junior hoodie 25/26",price:34990,type:"pulover",collection:"fan",img:"img/pulover2.webp",menu:"ajandekok",kategoria:"gyerek-pulover"},
+{id:"aj-gyerek-pulover-03",name:"FC Barcelona gyerek zip pulóver 25/26",price:32990,type:"pulover",collection:"core",img:"img/pulover3.webp",menu:"ajandekok",kategoria:"gyerek-pulover"},
+
+{id:"aj-gyerek-polo-01",name:"FC Barcelona gyerek póló – kék 25/26",price:19990,type:"polo",collection:"core",img:"img/etraining1.webp",menu:"ajandekok",kategoria:"gyerek-polo"},
+{id:"aj-gyerek-polo-02",name:"FC Barcelona gyerek grafikus póló",price:21990,type:"polo",collection:"fan",img:"img/etraining2.webp",menu:"ajandekok",kategoria:"gyerek-polo"},
+{id:"aj-gyerek-polo-03",name:"FC Barcelona gyerek retro póló",price:22990,type:"polo",collection:"retro",img:"img/etraining3.webp",menu:"ajandekok",kategoria:"gyerek-polo"},
+
+{id:"aj-gyerek-nadrag-01",name:"FC Barcelona gyerek edzőnadrág 25/26",price:24990,type:"pulover",collection:"core",img:"img/gtraining4.webp",menu:"ajandekok",kategoria:"gyerek-nadrag"},
+{id:"aj-gyerek-nadrag-02",name:"FC Barcelona gyerek rövidnadrág 25/26",price:19990,type:"pulover",collection:"core",img:"img/gtraining5.webp",menu:"ajandekok",kategoria:"gyerek-nadrag"},
+
+{id:"aj-gyerek-melegito-01",name:"FC Barcelona junior melegítő szett 25/26",price:37990,type:"pulover",collection:"core",img:"img/ttraining3.webp",menu:"ajandekok",kategoria:"gyerek-melegito"},
+{id:"aj-gyerek-melegito-02",name:"FC Barcelona junior tracksuit 25/26",price:41990,type:"pulover",collection:"core",img:"img/ttraining4.webp",menu:"ajandekok",kategoria:"gyerek-melegito"},
+
+{id:"aj-babak-01",name:"FC Barcelona bébi body szett",price:14990,type:"polo",collection:"fan",img:"img/feherpolo1.webp",menu:"ajandekok",kategoria:"babak"},
+{id:"aj-babak-02",name:"FC Barcelona bébi melegítő",price:17990,type:"pulover",collection:"fan",img:"img/feherpolo2.webp",menu:"ajandekok",kategoria:"babak"},
+{id:"aj-babak-03",name:"FC Barcelona bébi sapka és kesztyű szett",price:9990,type:"sapka",collection:"fan",img:"img/sapka1.webp",menu:"ajandekok",kategoria:"babak"},
+
+{id:"aj-noi-pulover-01",name:"FC Barcelona női pulóver – sötétkék 25/26",price:39990,type:"pulover",collection:"core",img:"img/ntraining3.webp",menu:"ajandekok",kategoria:"noi-pulover"},
+{id:"aj-noi-pulover-02",name:"FC Barcelona női hoodie 25/26",price:44990,type:"pulover",collection:"fan",img:"img/ntraining4.webp",menu:"ajandekok",kategoria:"noi-pulover"},
+
+{id:"aj-noi-polo-01",name:"FC Barcelona női póló – fehér 25/26",price:22990,type:"polo",collection:"atemporal",img:"img/netraining1.webp",menu:"ajandekok",kategoria:"noi-polo"},
+{id:"aj-noi-polo-02",name:"FC Barcelona női grafikus póló",price:24990,type:"polo",collection:"fan",img:"img/netraining2.webp",menu:"ajandekok",kategoria:"noi-polo"},
+{id:"aj-noi-polo-03",name:"FC Barcelona női retro póló",price:26990,type:"polo",collection:"retro",img:"img/netraining3.webp",menu:"ajandekok",kategoria:"noi-polo"},
+
+{id:"aj-noi-nadrag-01",name:"FC Barcelona női leggings 25/26",price:28990,type:"pulover",collection:"core",img:"img/ngtraining1.webp",menu:"ajandekok",kategoria:"noi-nadrag"},
+{id:"aj-noi-nadrag-02",name:"FC Barcelona női rövidnadrág 25/26",price:23990,type:"pulover",collection:"core",img:"img/ngtraining2.webp",menu:"ajandekok",kategoria:"noi-nadrag"},
+
+{id:"aj-noi-melegito-01",name:"FC Barcelona női melegítő felső 25/26",price:44990,type:"pulover",collection:"core",img:"img/nttraining1.webp",menu:"ajandekok",kategoria:"noi-melegito"},
+{id:"aj-noi-melegito-02",name:"FC Barcelona női tracksuit 25/26",price:57990,type:"pulover",collection:"core",img:"img/nttraining2.webp",menu:"ajandekok",kategoria:"noi-melegito"},
+
+{id:"aj-noi-kabat-01",name:"FC Barcelona női széldzseki",price:52990,type:"dzseki",collection:"core",img:"img/jacket3.webp",menu:"ajandekok",kategoria:"noi-kabat"},
+{id:"aj-noi-kabat-02",name:"FC Barcelona női téli kabát",price:72990,type:"dzseki",collection:"core",img:"img/jacket4.webp",menu:"ajandekok",kategoria:"noi-kabat"},
+
+{id:"aj-aftermatch-01",name:"FC Barcelona Aftermatch pulóver",price:54990,type:"pulover",collection:"core",img:"img/training1.webp",menu:"ajandekok",kategoria:"aftermatch"},
+{id:"aj-aftermatch-02",name:"FC Barcelona Aftermatch póló",price:34990,type:"polo",collection:"core",img:"img/training2.webp",menu:"ajandekok",kategoria:"aftermatch"},
+{id:"aj-aftermatch-03",name:"FC Barcelona Aftermatch nadrág",price:39990,type:"pulover",collection:"core",img:"img/training3.webp",menu:"ajandekok",kategoria:"aftermatch"},
+
+{id:"aj-essentials-01",name:"FC Barcelona Essentials póló",price:29990,type:"polo",collection:"core",img:"img/feherpolo1.webp",menu:"ajandekok",kategoria:"essentials"},
+{id:"aj-essentials-02",name:"FC Barcelona Essentials nadrág",price:36990,type:"pulover",collection:"core",img:"img/feherpolo2.webp",menu:"ajandekok",kategoria:"essentials"},
+{id:"aj-essentials-03",name:"FC Barcelona Essentials melegítő szett",price:52990,type:"pulover",collection:"core",img:"img/feherpolo3.webp",menu:"ajandekok",kategoria:"essentials"},
+
+{id:"aj-cruyff-01",name:"FC Barcelona x Cruyff póló",price:42990,type:"polo",collection:"retro",img:"img/retropolo1.webp",menu:"ajandekok",kategoria:"cruyff"},
+{id:"aj-cruyff-02",name:"FC Barcelona x Cruyff melegítő",price:69990,type:"pulover",collection:"retro",img:"img/retropolo2.webp",menu:"ajandekok",kategoria:"cruyff"},
+
+{id:"aj-retro-01",name:"FC Barcelona retro mez replica",price:54990,type:"mez",collection:"retro",img:"img/retropolo1.webp",menu:"ajandekok",kategoria:"retro"},
+{id:"aj-retro-02",name:"FC Barcelona retro dzseki",price:64990,type:"dzseki",collection:"retro",img:"img/retropolo3.webp",menu:"ajandekok",kategoria:"retro"},
+{id:"aj-retro-03",name:"FC Barcelona retro pulóver",price:49990,type:"pulover",collection:"retro",img:"img/retropolo4.webp",menu:"ajandekok",kategoria:"retro"},
+
+{id:"aj-fan-01",name:"FC Barcelona Fan póló",price:19990,type:"polo",collection:"fan",img:"img/feherpolo4.webp",menu:"ajandekok",kategoria:"fan"},
+{id:"aj-fan-02",name:"FC Barcelona Fan sál",price:14990,type:"hatizsak",collection:"fan",img:"img/sapka2.webp",menu:"ajandekok",kategoria:"fan"},
+{id:"aj-fan-03",name:"FC Barcelona Fan sapka",price:11990,type:"sapka",collection:"fan",img:"img/sapka3.webp",menu:"ajandekok",kategoria:"fan"},
+
+{id:"egyeb-zokni-01",name:"FC Barcelona zokni – 3 pár szett",price:4990,type:"polo",collection:"fan",img:"img/etraining4.webp",menu:"egyeb",kategoria:"zokni"},
+{id:"egyeb-zokni-02",name:"FC Barcelona sportszokni",price:2990,type:"polo",collection:"core",img:"img/etraining5.webp",menu:"egyeb",kategoria:"zokni"},
+{id:"egyeb-zokni-03",name:"FC Barcelona csíkos zokni szett",price:5990,type:"polo",collection:"fan",img:"img/etraining6.webp",menu:"egyeb",kategoria:"zokni"},
+
+{id:"egyeb-ora-01",name:"FC Barcelona karóra",price:24990,type:"polo",collection:"fan",img:"img/etraining7.webp",menu:"egyeb",kategoria:"ora-ekszer"},
+{id:"egyeb-ekszer-01",name:"FC Barcelona karkötő",price:8990,type:"polo",collection:"fan",img:"img/etraining8.webp",menu:"egyeb",kategoria:"ora-ekszer"},
+{id:"egyeb-ekszer-02",name:"FC Barcelona nyaklánc",price:12990,type:"polo",collection:"fan",img:"img/etraining9.webp",menu:"egyeb",kategoria:"ora-ekszer"},
+
+{id:"egyeb-sal-01",name:"FC Barcelona sál – kék-piros",price:8990,type:"polo",collection:"fan",img:"img/sapka2.webp",menu:"egyeb",kategoria:"sal-zaszlo"},
+{id:"egyeb-zaszlo-01",name:"FC Barcelona zászló – nagy",price:6990,type:"polo",collection:"fan",img:"img/sapka3.webp",menu:"egyeb",kategoria:"sal-zaszlo"},
+{id:"egyeb-zaszlo-02",name:"FC Barcelona asztali zászló",price:3990,type:"polo",collection:"fan",img:"img/sapka4.webp",menu:"egyeb",kategoria:"sal-zaszlo"},
+
+{id:"egyeb-labda-01",name:"FC Barcelona La Liga focilabda",price:14990,type:"polo",collection:"core",img:"img/harmadikszamu2.webp",menu:"egyeb",kategoria:"labda"},
+{id:"egyeb-labda-02",name:"FC Barcelona Champions League labda",price:17990,type:"polo",collection:"core",img:"img/harmadikszamu3.webp",menu:"egyeb",kategoria:"labda"},
+{id:"egyeb-labda-03",name:"FC Barcelona mini labda szett",price:9990,type:"polo",collection:"fan",img:"img/harmadikszamu4.webp",menu:"egyeb",kategoria:"labda"},
+
+{id:"egyeb-kulcstarto-01",name:"FC Barcelona fém kulcstartó",price:2990,type:"polo",collection:"fan",img:"img/etraining10.webp",menu:"egyeb",kategoria:"kulcstarto"},
+{id:"egyeb-kulcstarto-02",name:"FC Barcelona bőr kulcstartó",price:4990,type:"polo",collection:"fan",img:"img/etraining11.webp",menu:"egyeb",kategoria:"kulcstarto"},
+{id:"egyeb-magnes-01",name:"FC Barcelona hűtőmágnes",price:1990,type:"polo",collection:"fan",img:"img/etraining12.webp",menu:"egyeb",kategoria:"kulcstarto"},
+
+{id:"egyeb-jatek-01",name:"FC Barcelona mini asztali foci",price:19990,type:"polo",collection:"fan",img:"img/product11.webp",menu:"egyeb",kategoria:"jatek"},
+{id:"egyeb-jatek-02",name:"FC Barcelona puzzle 1000 darabos",price:7990,type:"polo",collection:"fan",img:"img/product12.webp",menu:"egyeb",kategoria:"jatek"},
+{id:"egyeb-jatek-03",name:"FC Barcelona játékos figura szett",price:12990,type:"polo",collection:"fan",img:"img/product13.webp",menu:"egyeb",kategoria:"jatek"},
+
+{id:"egyeb-palack-01",name:"FC Barcelona sport kulacs – 750ml",price:6990,type:"polo",collection:"core",img:"img/training4.webp",menu:"egyeb",kategoria:"palack-bogre"},
+{id:"egyeb-bogre-01",name:"FC Barcelona bögre – kék",price:4990,type:"polo",collection:"fan",img:"img/training5.webp",menu:"egyeb",kategoria:"palack-bogre"},
+{id:"egyeb-bogre-02",name:"FC Barcelona termosz 500ml",price:9990,type:"polo",collection:"core",img:"img/training6.webp",menu:"egyeb",kategoria:"palack-bogre"},
+
+{id:"egyeb-otthon-01",name:"FC Barcelona díszpárna",price:9990,type:"polo",collection:"fan",img:"img/training7.webp",menu:"egyeb",kategoria:"otthoni-kiegeszito"},
+{id:"egyeb-otthon-02",name:"FC Barcelona falióra",price:14990,type:"polo",collection:"fan",img:"img/training8.webp",menu:"egyeb",kategoria:"otthoni-kiegeszito"},
+{id:"egyeb-otthon-03",name:"FC Barcelona poszter A1",price:5990,type:"polo",collection:"fan",img:"img/training9.webp",menu:"egyeb",kategoria:"otthoni-kiegeszito"},
+
+{id:"egyeb-elek-01",name:"FC Barcelona vezeték nélküli töltő",price:19990,type:"polo",collection:"fan",img:"img/training10.webp",menu:"egyeb",kategoria:"elektronika"},
+{id:"egyeb-elek-02",name:"FC Barcelona telefontok",price:8990,type:"polo",collection:"fan",img:"img/training11.webp",menu:"egyeb",kategoria:"elektronika"},
+{id:"egyeb-elek-03",name:"FC Barcelona Bluetooth hangszóró",price:24990,type:"polo",collection:"fan",img:"img/training12.webp",menu:"egyeb",kategoria:"elektronika"},
+
+{id:"egyeb-iroda-01",name:"FC Barcelona notebook A5",price:3990,type:"polo",collection:"fan",img:"img/training13.webp",menu:"egyeb",kategoria:"irodaszer"},
+{id:"egyeb-iroda-02",name:"FC Barcelona tollkészlet",price:2990,type:"polo",collection:"fan",img:"img/training14.webp",menu:"egyeb",kategoria:"irodaszer"},
+{id:"egyeb-iroda-03",name:"FC Barcelona naptár 2026",price:4990,type:"polo",collection:"fan",img:"img/training15.webp",menu:"egyeb",kategoria:"irodaszer"},
+
+{id:"egyeb-fan-01",name:"FC Barcelona szurkolói csomag",price:29990,type:"polo",collection:"fan",img:"img/training16.webp",menu:"egyeb",kategoria:"fan-kiegeszito"},
+{id:"egyeb-fan-02",name:"FC Barcelona szurkolói prémium csomag",price:49990,type:"polo",collection:"fan",img:"img/product10.webp",menu:"egyeb",kategoria:"fan-kiegeszito"},
+{id:"egyeb-fan-03",name:"FC Barcelona szurkolói kiegészítő szett",price:19990,type:"polo",collection:"fan",img:"img/product14.webp",menu:"egyeb",kategoria:"fan-kiegeszito"},
+{id:"meccs-01",name:"FC Barcelona - Real Madrid (El Clásico)",price:12990,type:"service",collection:"match",img:"img/meccs1.jpg",menu:"jegyek-es-utazasok",kategoria:"meccsek"},
+{id:"meccs-02",name:"FC Barcelona - Atlético Madrid",price:12990,type:"service",collection:"match",img:"img/meccs2.jpg",menu:"jegyek-es-utazasok",kategoria:"meccsek"},
+{id:"meccs-03",name:"FC Barcelona - Girona FC",price:11990,type:"service",collection:"match",img:"img/meccs3.png",menu:"jegyek-es-utazasok",kategoria:"meccsek"},
+{id:"meccs-04",name:"FC Barcelona - Sevilla FC",price:10990,type:"service",collection:"match",img:"img/meccs4.jpg",menu:"jegyek-es-utazasok",kategoria:"meccsek"},
+{id:"meccs-05",name:"FC Barcelona - Athletic Club",price:11990,type:"service",collection:"match",img:"img/meccs1.jpg",menu:"jegyek-es-utazasok",kategoria:"meccsek"},
 ]
 
 const CDN_POOLS={
@@ -1124,6 +1229,63 @@ return
 }
 
 if(activeMenuFilter!=="edzes"){
+if(activeMenuFilter==="jegyek-es-utazasok"){
+pageTitle.innerText="MECCSEK"
+return
+}
+if(activeMenuFilter==="ajandekok"){
+const ajandekCategoryLabelByKey={
+"ferfi-pulover":"FÉRFI PULÓVEREK",
+"ferfi-polo":"FÉRFI PÓLÓK",
+"ferfi-nadrag":"FÉRFI NADRÁGOK",
+"ferfi-melegito":"FÉRFI MELEGÍTŐK",
+"ferfi-kabat":"FÉRFI KABÁTOK",
+"gyerek-pulover":"GYEREK PULÓVEREK",
+"gyerek-polo":"GYEREK PÓLÓK",
+"gyerek-nadrag":"GYEREK NADRÁGOK",
+"gyerek-melegito":"GYEREK MELEGÍTŐK",
+"babak":"BABÁK",
+"noi-pulover":"NŐI PULÓVEREK",
+"noi-polo":"NŐI PÓLÓK",
+"noi-nadrag":"NŐI NADRÁGOK",
+"noi-melegito":"NŐI MELEGÍTŐK",
+"noi-kabat":"NŐI KABÁTOK",
+"aftermatch":"AFTERMATCH KOLLEKCIÓ",
+"essentials":"ESSENTIALS KOLLEKCIÓ",
+"cruyff":"CRUYFF KOLLEKCIÓ",
+"retro":"RETRO KOLLEKCIÓ",
+"fan":"FAN KOLLEKCIÓ"
+}
+if(activeCategoryFilter && ajandekCategoryLabelByKey[activeCategoryFilter]){
+pageTitle.innerText="AJÁNDÉKOK - "+ajandekCategoryLabelByKey[activeCategoryFilter]
+}else{
+pageTitle.innerText="AJÁNDÉKOK - ÖSSZES TERMÉK"
+}
+return
+}
+if(activeMenuFilter==="egyeb"){
+const egyebCategoryLabelByKey={
+"hatizsak":"HÁTIZSÁKOK ÉS TÁSKÁK",
+"fejfedo":"FEJFEDŐK",
+"zokni":"ZOKNIK",
+"ora-ekszer":"ÓRÁK ÉS ÉKSZEREK",
+"sal-zaszlo":"SÁLAK ÉS ZÁSZLÓK",
+"labda":"LABDÁK",
+"kulcstarto":"KULCSTARTÓK ÉS MÁGNESEK",
+"jatek":"JÁTÉKOK",
+"palack-bogre":"KULACSOK ÉS BÖGRÉK",
+"otthoni-kiegeszito":"OTTHONI KIEGÉSZÍTŐK",
+"elektronika":"ELEKTRONIKA",
+"irodaszer":"IRODASZEREK",
+"fan-kiegeszito":"ÖSSZES SZURKOLÓI KIEGÉSZÍTŐ"
+}
+if(activeCategoryFilter && egyebCategoryLabelByKey[activeCategoryFilter]){
+pageTitle.innerText="EGYÉB - "+egyebCategoryLabelByKey[activeCategoryFilter]
+}else{
+pageTitle.innerText="EGYÉB - ÖSSZES TERMÉK"
+}
+return
+}
 pageTitle.innerText="LEGNÉPSZERŰBB"
 return
 }
@@ -1184,3 +1346,5 @@ showToast("Sikeres feliratkozás! Hamarosan értesítünk az új FC Barcelona te
 
 </body>
 </html>
+
+

@@ -724,6 +724,24 @@ item.classList.remove("open");
 });
 
 const dropdown=item.querySelector(".menu-dropdown");
+const trigger=item.querySelector(".menu-link");
+
+if(trigger){
+trigger.addEventListener("click",(event)=>{
+const href=(trigger.getAttribute("href") || "").trim();
+// For placeholder menu roots (e.g. Ajándékok/Egyéb), open dropdown on click.
+if(href==="#" || href===""){
+event.preventDefault();
+event.stopPropagation();
+const willOpen=!item.classList.contains("open");
+closeAll();
+if(willOpen){
+item.classList.add("open");
+}
+}
+});
+}
+
 if(dropdown){
 dropdown.addEventListener("mouseenter",clearCloseTimer);
 dropdown.addEventListener("mouseleave",()=>{
@@ -740,6 +758,69 @@ if(!event.target.closest(".has-dropdown")){
 closeAll();
 }
 });
+}
+
+function initActiveNavbarItem(){
+const menu=document.querySelector(".navbar .menu");
+if(!menu){
+return;
+}
+
+const clearActive=()=>{
+menu.querySelectorAll("a.active-nav").forEach((el)=>el.classList.remove("active-nav"));
+};
+
+const setActive=(selector)=>{
+if(!selector){
+return;
+}
+const target=menu.querySelector(selector);
+if(target){
+target.classList.add("active-nav");
+}
+};
+
+const path=(window.location.pathname.split("/").pop() || "").toLowerCase();
+const params=new URLSearchParams(window.location.search || "");
+const menuParam=(params.get("menu") || "").toLowerCase();
+
+clearActive();
+
+if(path==="legnepszerubb.html"){
+if(menuParam==="edzes"){
+setActive('a.menu-link[href*="menu=edzes"]');
+return;
+}
+if(menuParam==="ajandekok"){
+setActive('a.menu-link[href*="menu=ajandekok"]');
+return;
+}
+if(menuParam==="egyeb"){
+setActive('a.menu-link[href*="menu=egyeb"]');
+return;
+}
+if(menuParam==="jegyek-es-utazasok"){
+setActive('a.menu-link[href*="menu=jegyek-es-utazasok"]');
+return;
+}
+setActive('a[href="legnepszerubb.html"]');
+return;
+}
+
+if(path==="mezek.html"){
+setActive('a.menu-link[href="mezek.html"]');
+return;
+}
+
+if(path==="termek.html"){
+const productId=(params.get("id") || "").toLowerCase();
+if(productId.startsWith("meccs-")){
+setActive('a.menu-link[href*="menu=jegyek-es-utazasok"]');
+return;
+}
+setActive('a[href="legnepszerubb.html"]');
+return;
+}
 }
 
 document.addEventListener("click",(event)=>{
@@ -775,12 +856,14 @@ if(document.readyState==="loading"){
 document.addEventListener("DOMContentLoaded",()=>{
 updateBadges();
 initMezekDropdown();
+initActiveNavbarItem();
 ensureSearchUi();
 animateProducts(".product");
 });
 }else{
 updateBadges();
 initMezekDropdown();
+initActiveNavbarItem();
 ensureSearchUi();
 animateProducts(".product");
 }

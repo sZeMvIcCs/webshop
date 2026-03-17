@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="hu">
 <head>
 <meta charset="UTF-8">
@@ -284,6 +284,68 @@ font-weight:600;
 font-size:16px;
 }
 
+.choice-tabs{
+display:flex;
+gap:10px;
+margin:16px 0;
+}
+
+.choice-tab{
+padding:10px 14px;
+border-radius:999px;
+background:#dfe7f5;
+font-weight:700;
+border:none;
+cursor:pointer;
+}
+
+.choice-tab.active{
+background:#0f66ff;
+color:white;
+}
+
+.service-grid{
+display:grid;
+grid-template-columns:1fr;
+gap:10px;
+margin-bottom:16px;
+}
+
+.service-card{
+border:1px solid #c8d3e6;
+background:white;
+border-radius:10px;
+padding:12px;
+cursor:pointer;
+transition:border-color .2s ease, box-shadow .2s ease;
+}
+
+.service-card.active{
+border-color:#0f66ff;
+box-shadow:0 0 0 2px rgba(15,102,255,.12);
+}
+
+.service-top{
+display:flex;
+justify-content:space-between;
+gap:10px;
+align-items:flex-start;
+font-weight:700;
+margin-bottom:6px;
+}
+
+.service-desc{
+font-size:14px;
+color:#455b80;
+line-height:1.4;
+}
+
+.service-price{
+white-space:nowrap;
+font-weight:700;
+color:#07244a;
+}
+
 .subtotal{
 font-size:34px;
 font-weight:700;
@@ -567,24 +629,154 @@ grid-template-columns:repeat(2,1fr);
 <div id="toast" class="toast"></div>
 
 <nav class="navbar">
+
 <a class="logo" href="barca.html">
-<img src="img/logo.png" alt="Logo">
+<img src="img/logo.png">
 <div class="logo-text">
 <span>Official Barca</span>
 <span>Store</span>
 </div>
 </a>
+
 <div class="menu">
 <a href="legnepszerubb.html">Legnépszerűbb</a>
-<div class="has-dropdown edzes-menu"><a href="legnepszerubb.html?menu=edzes" class="menu-link">Edzés</a><div class="menu-dropdown edzes-dropdown"><div class="menu-col"><h5>Férfi</h5><a href="legnepszerubb.html?menu=edzes&kategoria=ferfi-kabat-pulover">Kabátok és pulóverek</a><a href="legnepszerubb.html?menu=edzes&kategoria=ferfi-polo">Pólók</a><a href="legnepszerubb.html?menu=edzes&kategoria=ferfi-nadrag-rovid">Nadrágok és rövidnadrágok</a><a href="legnepszerubb.html?menu=edzes&kategoria=ferfi-melegito">Melegítők</a></div><div class="menu-col"><h5>Női</h5><a href="legnepszerubb.html?menu=edzes&kategoria=noi-kabat-pulover">Kabátok és pulóverek</a><a href="legnepszerubb.html?menu=edzes&kategoria=noi-polo">Pólók</a><a href="legnepszerubb.html?menu=edzes&kategoria=noi-nadrag-rovid">Nadrágok és rövidnadrágok</a><a href="legnepszerubb.html?menu=edzes&kategoria=noi-melegito">Melegítők</a></div><div class="menu-col"><h5>Gyerekek és babák</h5><a href="legnepszerubb.html?menu=edzes&kategoria=gyerek-kabat-pulover">Kabátok és pulóverek</a><a href="legnepszerubb.html?menu=edzes&kategoria=gyerek-polo">Pólók</a><a href="legnepszerubb.html?menu=edzes&kategoria=gyerek-nadrag-rovid">Nadrágok és rövidnadrágok</a><a href="legnepszerubb.html?menu=edzes&kategoria=gyerek-melegito">Melegítők</a></div></div></div>
-<div class="has-dropdown"><a href="#" class="menu-link">Ajándékok</a><div class="menu-dropdown"><div class="menu-col"><h5>Férfi</h5><a href="legnepszerubb.html?menu=ajandekok&kategoria=ferfi-pulover">Pulóverek</a><a href="legnepszerubb.html?menu=ajandekok&kategoria=ferfi-polo">Pólók</a><a href="legnepszerubb.html?menu=ajandekok&kategoria=ferfi-nadrag">Nadrágok és rövidnadrágok</a><a href="legnepszerubb.html?menu=ajandekok&kategoria=ferfi-melegito">Melegítők</a><a href="legnepszerubb.html?menu=ajandekok&kategoria=ferfi-kabat">Kabátok</a></div><div class="menu-col"><h5>Gyerekek és babák</h5><a href="legnepszerubb.html?menu=ajandekok&kategoria=gyerek-pulover">Pulóverek</a><a href="legnepszerubb.html?menu=ajandekok&kategoria=gyerek-polo">Pólók</a><a href="legnepszerubb.html?menu=ajandekok&kategoria=gyerek-nadrag">Nadrágok és rövidnadrágok</a><a href="legnepszerubb.html?menu=ajandekok&kategoria=gyerek-melegito">Melegítők</a><a href="legnepszerubb.html?menu=ajandekok&kategoria=babak">Babák</a></div><div class="menu-col"><h5>Női</h5><a href="legnepszerubb.html?menu=ajandekok&kategoria=noi-pulover">Pulóverek</a><a href="legnepszerubb.html?menu=ajandekok&kategoria=noi-polo">Pólók</a><a href="legnepszerubb.html?menu=ajandekok&kategoria=noi-nadrag">Nadrágok és rövidnadrágok</a><a href="legnepszerubb.html?menu=ajandekok&kategoria=noi-melegito">Melegítők</a><a href="legnepszerubb.html?menu=ajandekok&kategoria=noi-kabat">Kabátok</a></div><div class="menu-col"><h5>Kollekciók</h5><a href="legnepszerubb.html?menu=ajandekok&kategoria=aftermatch">Aftermatch kollekció</a><a href="legnepszerubb.html?menu=ajandekok&kategoria=essentials">Essentials kollekció</a><a href="legnepszerubb.html?menu=ajandekok&kategoria=cruyff">Cruyff kollekció</a><a href="legnepszerubb.html?menu=ajandekok&kategoria=retro">Retro kollekció</a><a href="legnepszerubb.html?menu=ajandekok&kategoria=fan">Fan kollekció</a></div></div></div>
-<div class="has-dropdown"><a href="mezek.html" class="menu-link">Mezek</a><div class="menu-dropdown"><div class="menu-col"><h5>Hazai mez</h5><a href="mezek.html?tipus=hazai">Férfi</a><a href="mezek.html?tipus=hazai">Gyerek</a><a href="mezek.html?tipus=hazai">Női</a></div><div class="menu-col"><h5>Vendég mez</h5><a href="mezek.html?tipus=vendeg">Férfi</a><a href="mezek.html?tipus=vendeg">Gyerek</a><a href="mezek.html?tipus=vendeg">Női</a></div><div class="menu-col"><h5>Harmadikszámú mez</h5><a href="mezek.html?tipus=harmadikszamu">Férfi</a><a href="mezek.html?tipus=harmadikszamu">Gyerek</a><a href="mezek.html?tipus=harmadikszamu">Női</a></div><div class="menu-col"><h5>Kapus mez</h5><a href="mezek.html?tipus=kapus">Férfi</a><a href="mezek.html?tipus=kapus">Gyerek</a><a href="mezek.html?tipus=kapus">Női</a></div></div></div>
-<div class="has-dropdown"><a href="#" class="menu-link">Egyéb</a><div class="menu-dropdown"><div class="menu-col"><h5>Kiegészítők</h5><a href="legnepszerubb.html?menu=egyeb&kategoria=hatizsak">Hátizsákok és táskák</a><a href="legnepszerubb.html?menu=egyeb&kategoria=fejfedo">Fejfedők</a><a href="legnepszerubb.html?menu=egyeb&kategoria=zokni">Zoknik</a><a href="legnepszerubb.html?menu=egyeb&kategoria=ora-ekszer">Órák és ékszerek</a></div><div class="menu-col"><h5>Szuvenírek</h5><a href="legnepszerubb.html?menu=egyeb&kategoria=sal-zaszlo">Sálak és zászlók</a><a href="legnepszerubb.html?menu=egyeb&kategoria=labda">Labdák</a><a href="legnepszerubb.html?menu=egyeb&kategoria=kulcstarto">Kulcstartók és mágnesek</a><a href="legnepszerubb.html?menu=egyeb&kategoria=jatek">Játékok</a></div><div class="menu-col"><h5>Otthon</h5><a href="legnepszerubb.html?menu=egyeb&kategoria=palack-bogre">Kulacsok és bögrék</a><a href="legnepszerubb.html?menu=egyeb&kategoria=otthoni-kiegeszito">Otthoni kiegészítők</a><a href="legnepszerubb.html?menu=egyeb&kategoria=elektronika">Elektronika</a><a href="legnepszerubb.html?menu=egyeb&kategoria=irodaszer">Irodaszerek</a></div><div class="menu-col"><h5>Szurkolói kiegészítők</h5><a href="legnepszerubb.html?menu=egyeb&kategoria=fan-kiegeszito">Összes szurkolói kiegészítő</a></div></div></div>
-<div class="has-dropdown"><a href="#" class="menu-link">Jegyek és utazások</a><div class="menu-dropdown"><div class="menu-col"><h5>Meccsjegyek</h5><a href="legnepszerubb.html?menu=jegyek-es-utazasok&kategoria=hazai-meccsek">Hazai mérkőzések</a><a href="legnepszerubb.html?menu=jegyek-es-utazasok&kategoria=idegenbeli-meccsek">Idegenbeli mérkőzések</a><a href="legnepszerubb.html?menu=jegyek-es-utazasok&kategoria=vip">VIP csomagok</a></div><div class="menu-col"><h5>Utazások</h5><a href="legnepszerubb.html?menu=jegyek-es-utazasok&kategoria=meccsutazas">Meccsutazás csomagok</a><a href="legnepszerubb.html?menu=jegyek-es-utazasok&kategoria=stadiontura">Stadiontúrák</a><a href="legnepszerubb.html?menu=jegyek-es-utazasok&kategoria=varoslatas">Barcelonai városlátogatás</a></div></div></div>
+<div class="has-dropdown edzes-menu">
+<a href="legnepszerubb.html?menu=edzes" class="menu-link">Edzés</a>
+<div class="menu-dropdown edzes-dropdown">
+<div class="menu-col">
+<h5>Férfi</h5>
+<a href="legnepszerubb.html?menu=edzes&kategoria=ferfi-kabat-pulover">Kabátok és pulóverek</a>
+<a href="legnepszerubb.html?menu=edzes&kategoria=ferfi-polo">Pólók</a>
+<a href="legnepszerubb.html?menu=edzes&kategoria=ferfi-nadrag-rovid">Nadrágok és rövidnadrágok</a>
+<a href="legnepszerubb.html?menu=edzes&kategoria=ferfi-melegito">Melegítők</a>
 </div>
+<div class="menu-col">
+<h5>Női</h5>
+<a href="legnepszerubb.html?menu=edzes&kategoria=noi-kabat-pulover">Kabátok és pulóverek</a>
+<a href="legnepszerubb.html?menu=edzes&kategoria=noi-polo">Pólók</a>
+<a href="legnepszerubb.html?menu=edzes&kategoria=noi-nadrag-rovid">Nadrágok és rövidnadrágok</a>
+<a href="legnepszerubb.html?menu=edzes&kategoria=noi-melegito">Melegítők</a>
+</div>
+<div class="menu-col">
+<h5>Gyerekek és babák</h5>
+<a href="legnepszerubb.html?menu=edzes&kategoria=gyerek-kabat-pulover">Kabátok és pulóverek</a>
+<a href="legnepszerubb.html?menu=edzes&kategoria=gyerek-polo">Pólók</a>
+<a href="legnepszerubb.html?menu=edzes&kategoria=gyerek-nadrag-rovid">Nadrágok és rövidnadrágok</a>
+<a href="legnepszerubb.html?menu=edzes&kategoria=gyerek-melegito">Melegítők</a>
+</div>
+</div>
+</div>
+<div class="has-dropdown">
+<a href="legnepszerubb.html?menu=ajandekok" class="menu-link">Ajándékok</a>
+<div class="menu-dropdown">
+<div class="menu-col">
+<h5>Férfi</h5>
+<a href="legnepszerubb.html?menu=ajandekok&kategoria=ferfi-pulover">Pulóverek</a>
+<a href="legnepszerubb.html?menu=ajandekok&kategoria=ferfi-polo">Pólók</a>
+<a href="legnepszerubb.html?menu=ajandekok&kategoria=ferfi-nadrag">Nadrágok és rövidnadrágok</a>
+<a href="legnepszerubb.html?menu=ajandekok&kategoria=ferfi-melegito">Melegítők</a>
+<a href="legnepszerubb.html?menu=ajandekok&kategoria=ferfi-kabat">Kabátok</a>
+</div>
+<div class="menu-col">
+<h5>Gyerekek és babák</h5>
+<a href="legnepszerubb.html?menu=ajandekok&kategoria=gyerek-pulover">Pulóverek</a>
+<a href="legnepszerubb.html?menu=ajandekok&kategoria=gyerek-polo">Pólók</a>
+<a href="legnepszerubb.html?menu=ajandekok&kategoria=gyerek-nadrag">Nadrágok és rövidnadrágok</a>
+<a href="legnepszerubb.html?menu=ajandekok&kategoria=gyerek-melegito">Melegítők</a>
+<a href="legnepszerubb.html?menu=ajandekok&kategoria=babak">Babák</a>
+</div>
+<div class="menu-col">
+<h5>Női</h5>
+<a href="legnepszerubb.html?menu=ajandekok&kategoria=noi-pulover">Pulóverek</a>
+<a href="legnepszerubb.html?menu=ajandekok&kategoria=noi-polo">Pólók</a>
+<a href="legnepszerubb.html?menu=ajandekok&kategoria=noi-nadrag">Nadrágok és rövidnadrágok</a>
+<a href="legnepszerubb.html?menu=ajandekok&kategoria=noi-melegito">Melegítők</a>
+<a href="legnepszerubb.html?menu=ajandekok&kategoria=noi-kabat">Kabátok</a>
+</div>
+<div class="menu-col">
+<h5>Kollekciók</h5>
+<a href="legnepszerubb.html?menu=ajandekok&kategoria=aftermatch">Aftermatch kollekció</a>
+<a href="legnepszerubb.html?menu=ajandekok&kategoria=essentials">Essentials kollekció</a>
+<a href="legnepszerubb.html?menu=ajandekok&kategoria=cruyff">Cruyff kollekció</a>
+<a href="legnepszerubb.html?menu=ajandekok&kategoria=retro">Retro kollekció</a>
+<a href="legnepszerubb.html?menu=ajandekok&kategoria=fan">Fan kollekció</a>
+</div>
+</div>
+</div>
+<div class="has-dropdown">
+<a href="mezek.html" class="menu-link">Mezek</a>
+<div class="menu-dropdown">
+<div class="menu-col">
+<h5>Hazai mez</h5>
+<a href="mezek.html?tipus=hazai">Férfi</a>
+<a href="mezek.html?tipus=hazai">Gyerek</a>
+<a href="mezek.html?tipus=hazai">Női</a>
+</div>
+<div class="menu-col">
+<h5>Vendég mez</h5>
+<a href="mezek.html?tipus=vendeg">Férfi</a>
+<a href="mezek.html?tipus=vendeg">Gyerek</a>
+<a href="mezek.html?tipus=vendeg">Női</a>
+</div>
+<div class="menu-col">
+<h5>Harmadikszámú mez</h5>
+<a href="mezek.html?tipus=harmadikszamu">Férfi</a>
+<a href="mezek.html?tipus=harmadikszamu">Gyerek</a>
+<a href="mezek.html?tipus=harmadikszamu">Női</a>
+</div>
+<div class="menu-col">
+<h5>Kapus mez</h5>
+<a href="mezek.html?tipus=kapus">Férfi</a>
+<a href="mezek.html?tipus=kapus">Gyerek</a>
+<a href="mezek.html?tipus=kapus">Női</a>
+</div>
+</div>
+</div>
+<div class="has-dropdown">
+<a href="legnepszerubb.html?menu=egyeb" class="menu-link">Egyéb</a>
+<div class="menu-dropdown">
+<div class="menu-col">
+<h5>Kiegészítők</h5>
+<a href="legnepszerubb.html?menu=egyeb&kategoria=hatizsak">Hátizsákok és táskák</a>
+<a href="legnepszerubb.html?menu=egyeb&kategoria=fejfedo">Fejfedők</a>
+<a href="legnepszerubb.html?menu=egyeb&kategoria=zokni">Zoknik</a>
+<a href="legnepszerubb.html?menu=egyeb&kategoria=ora-ekszer">Órák és ékszerek</a>
+</div>
+<div class="menu-col">
+<h5>Szuvenírek</h5>
+<a href="legnepszerubb.html?menu=egyeb&kategoria=sal-zaszlo">Sálak és zászlók</a>
+<a href="legnepszerubb.html?menu=egyeb&kategoria=labda">Labdák</a>
+<a href="legnepszerubb.html?menu=egyeb&kategoria=kulcstarto">Kulcstartók és mágnesek</a>
+<a href="legnepszerubb.html?menu=egyeb&kategoria=jatek">Játékok</a>
+</div>
+<div class="menu-col">
+<h5>Otthon</h5>
+<a href="legnepszerubb.html?menu=egyeb&kategoria=palack-bogre">Kulacsok és bögrék</a>
+<a href="legnepszerubb.html?menu=egyeb&kategoria=otthoni-kiegeszito">Otthoni kiegészítők</a>
+<a href="legnepszerubb.html?menu=egyeb&kategoria=elektronika">Elektronika</a>
+<a href="legnepszerubb.html?menu=egyeb&kategoria=irodaszer">Irodaszerek</a>
+</div>
+<div class="menu-col">
+<h5>Szurkolói kiegészítők</h5>
+<a href="legnepszerubb.html?menu=egyeb&kategoria=fan-kiegeszito">Összes szurkolói kiegészítő</a>
+</div>
+</div>
+</div>
+<div class="has-dropdown">
+<a href="legnepszerubb.html?menu=jegyek-es-utazasok" class="menu-link">Jegyek és utazások</a>
+<div class="menu-dropdown">
+<div class="menu-col">
+<h5>Meccsek</h5>
+<a href="legnepszerubb.html?menu=jegyek-es-utazasok">Meccsek</a>
+</div>
+</div>
+</div>
+</div>
+
 <div class="nav-actions">
 <button class="cart-toggle" type="button" aria-label="Kosár" title="Kosár">&#128717;<span class="cart-count">0</span></button>
 </div>
+
 </nav>
 
 <main class="page">
@@ -725,7 +917,12 @@ const products=[
 {id:"barca-15",name:"FC Barcelona Edzőmez - Férfi",price:34990,type:"mez",collection:"edzo",img:"img/product15.webp",gallery:["img/product15.webp","img/product6.webp","img/product11.webp","img/product12.webp"]},
 {id:"barca-16",name:"FC Barcelona Bemelegítő Felső",price:29990,type:"pulover",collection:"melegito",img:"img/product16.webp",gallery:["img/product16.webp","img/product7.webp","img/product10.webp","img/product14.webp"]},
 {id:"barca-17",name:"FC Barcelona Limitált Mez - Különkiadás",price:89990,type:"mez",collection:"limitalt",img:"img/product17.webp",gallery:["img/product17.webp","img/product3.webp","img/product8.webp","img/product11.webp"]},
-{id:"barca-18",name:"FC Barcelona Játékos Verzió Meccsmez",price:99990,type:"mez",collection:"jatekos",img:"img/product18.webp",gallery:["img/product18.webp","img/product3.webp","img/product9.webp","img/product13.webp"]}
+{id:"barca-18",name:"FC Barcelona Játékos Verzió Meccsmez",price:99990,type:"mez",collection:"jatekos",img:"img/product18.webp",gallery:["img/product18.webp","img/product3.webp","img/product9.webp","img/product13.webp"]},
+{id:"meccs-01",name:"FC Barcelona - Real Madrid (El Clásico)",price:12990,type:"service",collection:"match",img:"img/meccs1.jpg",gallery:["img/meccs1.jpg","img/meccs2.jpg","img/meccs3.png","img/meccs4.jpg"]},
+{id:"meccs-02",name:"FC Barcelona - Atlético Madrid",price:12990,type:"service",collection:"match",img:"img/meccs2.jpg",gallery:["img/meccs1.jpg","img/meccs2.jpg","img/meccs3.png","img/meccs4.jpg"]},
+{id:"meccs-03",name:"FC Barcelona - Girona FC",price:11990,type:"service",collection:"match",img:"img/meccs3.png",gallery:["img/meccs1.jpg","img/meccs2.jpg","img/meccs3.png","img/meccs4.jpg"]},
+{id:"meccs-04",name:"FC Barcelona - Sevilla FC",price:10990,type:"service",collection:"match",img:"img/meccs4.jpg",gallery:["img/meccs1.jpg","img/meccs2.jpg","img/meccs3.png","img/meccs4.jpg"]},
+{id:"meccs-05",name:"FC Barcelona - Athletic Club",price:11990,type:"service",collection:"match",img:"img/meccs1.jpg",gallery:["img/meccs1.jpg","img/meccs2.jpg","img/meccs3.png","img/meccs4.jpg"]}
 ]
 
 const CDN_POOLS={
@@ -814,7 +1011,20 @@ applyThemedEdzesImages()
 
 const params=new URLSearchParams(window.location.search)
 const currentId=params.get("id")
-const current=products.find(p=>p.id===currentId) || products[0]
+
+const matchCenterProduct={
+id:"meccsek-hub",
+name:"Meccsek - jegyek és utazási csomagok",
+price:0,
+type:"service",
+collection:"match",
+img:"img/meccs1.jpg",
+gallery:["img/meccs1.jpg","img/meccs2.jpg","img/meccs3.png","img/meccs4.jpg"]
+}
+
+const current=currentId==="meccsek-hub"
+? matchCenterProduct
+: (products.find(p=>p.id===currentId) || products[0])
 
 const priceFmt=(price)=> new Intl.NumberFormat("hu-HU").format(price)+" Ft"
 
@@ -837,12 +1047,93 @@ limitalt:"Limitált",
 jatekos:"Játékos verzió"
 }
 
-document.getElementById("breadcrumb").innerText="Legnépszerűbb / "+current.name
+	document.getElementById("breadcrumb").innerText=current.id==="meccsek-hub"
+	? "Jegyek és utazások / Meccsek"
+	: "Legnépszerűbb / "+current.name
 
 const infoPane=document.getElementById("infoPane")
 const ruhazatiTipusok=["polo","pulover","dzseki"]
 
 function renderInfo(product){
+const isMatchPage=product.id==="meccsek-hub" || /^meccs-\d+$/.test(product.id)
+
+if(isMatchPage){
+const ticketOptions=[
+{name:"Standard jegy",price:product.price,desc:"Alap belépő, jó rálátás a pályára."},
+{name:"Prémium jegy",price:product.price+12000,desc:"Kiemelt szektor, gyors beléptetés."},
+{name:"VIP jegy",price:product.price+60000,desc:"VIP lounge és exkluzív stadionélmény."}
+]
+
+const travelOptions=[
+{name:"Basic utazási csomag",price:89990,desc:"Repülő + 2 éj szállás + meccsjegy."},
+{name:"Classic utazási csomag",price:129990,desc:"Repülő + 3 éj szállás + meccsjegy + stadiontúra."},
+{name:"Prémium utazási csomag",price:199990,desc:"Repülő + 4 éj prémium szállás + kiemelt meccsnap."}
+]
+
+infoPane.innerHTML=`
+<div class="badge">MECCSNAPI AJÁNLAT</div>
+<div class="collection">Jegyek és utazások</div>
+<div class="title-price">
+<h1>${product.name}</h1>
+</div>
+<p style="color:#455b80;line-height:1.5;margin-bottom:10px;">Válaszd ki, hogy jegyet vagy utazási csomagot szeretnél, majd válassz egy kategóriát.</p>
+<div class="choice-tabs">
+<button class="choice-tab active" data-mode="jegy">Jegyek</button>
+<button class="choice-tab" data-mode="utazas">Utazások</button>
+</div>
+<div id="serviceGrid" class="service-grid"></div>
+<div class="custom-row"><span>Választott opció</span><span id="matchSubtotal" class="subtotal" style="font-size:28px;">${priceFmt(ticketOptions[0].price)}</span></div>
+<button class="cart-btn" id="matchCartBtn" data-add-to-cart="1" data-product-id="${product.id}-jegy-1" data-product-name="${product.name} - ${ticketOptions[0].name}" data-product-price="${ticketOptions[0].price}" data-product-image="${product.img}">KOSÁRBA</button>
+`
+
+const grid=infoPane.querySelector("#serviceGrid")
+const tabs=infoPane.querySelectorAll(".choice-tab")
+const subtotal=infoPane.querySelector("#matchSubtotal")
+const cartBtn=infoPane.querySelector("#matchCartBtn")
+let activeMode="jegy"
+let activeIndex=0
+
+function renderServiceCards(mode){
+const source=mode==="utazas" ? travelOptions : ticketOptions
+grid.innerHTML=source.map((item,i)=>`
+<div class="service-card ${i===activeIndex?"active":""}" data-option-index="${i}">
+<div class="service-top">
+<span>${item.name}</span>
+<span class="service-price">${priceFmt(item.price)}</span>
+</div>
+<div class="service-desc">${item.desc}</div>
+</div>
+`).join("")
+
+grid.querySelectorAll(".service-card").forEach((card)=>{
+card.addEventListener("click",()=>{
+activeIndex=Number(card.dataset.optionIndex || 0)
+renderServiceCards(activeMode)
+})
+})
+
+const selected=source[activeIndex] || source[0]
+subtotal.innerText=priceFmt(selected.price)
+cartBtn.dataset.productId=`${product.id}-${mode}-${activeIndex+1}`
+cartBtn.dataset.productName=`${product.name} - ${selected.name}`
+cartBtn.dataset.productPrice=String(selected.price)
+cartBtn.dataset.productImage=product.img
+}
+
+tabs.forEach((btn)=>{
+btn.addEventListener("click",()=>{
+tabs.forEach((x)=>x.classList.remove("active"))
+btn.classList.add("active")
+activeMode=btn.dataset.mode
+activeIndex=0
+renderServiceCards(activeMode)
+})
+})
+
+renderServiceCards(activeMode)
+return
+}
+
 if(product.type==="mez"){
 infoPane.innerHTML=`
 <div class="collection">${collectionLabels[product.collection] || product.collection} kollekció</div>
@@ -1016,7 +1307,7 @@ const nextIndex=(index+1)%gallery.length
 changeImage(nextIndex)
 })
 
-const reco=products.filter(p=>p.id!==current.id).slice(0,5)
+const reco=(current.id==="meccsek-hub" ? products : products.filter(p=>p.id!==current.id)).slice(0,5)
 document.getElementById("recoGrid").innerHTML=reco.map(p=>`
 <a class="reco-card" href="termek.html?id=${p.id}">
 <img src="${p.img}" alt="${p.name}">
@@ -1058,3 +1349,5 @@ showToast("Sikeres feliratkozás! Hamarosan értesítünk az új FC Barcelona te
 
 </body>
 </html>
+
+
