@@ -1,7 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
 .nav-actions{
 display:flex;
 align-items:center;
 justify-self:end;
+}
+
+/* Keep dropdown menus anchored to the navbar on every page,
+even where local page styles redefine .navbar. */
+body .navbar{
+position:sticky !important;
+top:0;
+z-index:1000;
+overflow:visible;
+background:#07244a !important;
+color:#fff;
+font-family:'Montserrat',sans-serif;
+}
+
+body .topbar{
+background:linear-gradient(90deg,#c11,#6b5cff) !important;
+color:#fff !important;
+font-family:'Montserrat',sans-serif;
+}
+
+body .navbar a,
+body .navbar a:visited,
+body .navbar a:active,
+body .navbar a:focus{
+color:#fff !important;
+}
+
+body .navbar .logo-text,
+body .navbar .logo-text span,
+body .navbar .menu,
+body .navbar .menu > a,
+body .navbar .menu .menu-link{
+font-family:'Montserrat',sans-serif;
+color:#fff;
+font-weight:600;
+}
+
+body .navbar .menu > a:hover,
+body .navbar .menu .menu-link:hover{
+color:#ffdd00;
+}
+
+body .navbar .menu > a.active-nav,
+body .navbar .menu > .has-dropdown > .menu-link.active-nav{
+position:relative;
+color:#fff !important;
+}
+
+body .navbar .menu > a.active-nav::after,
+body .navbar .menu > .has-dropdown > .menu-link.active-nav::after{
+content:"";
+position:absolute;
+left:0;
+right:0;
+bottom:-12px;
+height:3px;
+background:#ffd400;
+border-radius:999px;
+}
+
+body .navbar .menu-dropdown{
+background:#161845 !important;
+}
+
+body .navbar .menu-dropdown .menu-col a{
+color:#d9e4ff !important;
+}
+
+body .navbar .menu-dropdown .menu-col a:hover{
+color:#ffd400 !important;
 }
 
 .navbar .logo,
