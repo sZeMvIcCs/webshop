@@ -519,6 +519,51 @@ header {
     gap: 14px;
 }
 
+.order-success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 24px;
+    text-align: center;
+    animation: fadeInUp 0.5s ease;
+}
+
+.order-success-icon {
+    font-size: 5rem;
+    color: #22c55e;
+    margin-bottom: 24px;
+}
+
+.order-success h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: var(--text);
+}
+
+.order-success p {
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.order-id {
+    background: var(--card-bg);
+    border: 1px solid var(--primary);
+    border-radius: 10px;
+    padding: 12px 32px;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: 2px;
+    margin: 16px 0 8px;
+}
+
+.order-success-sub {
+    margin-bottom: 32px !important;
+}
+
 .products.list-mode .product-card {
     display: grid;
     grid-template-columns: 170px 1fr;
