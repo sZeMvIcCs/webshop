@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeumannShop – Kosár</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <a href="index.html" class="brand">
+            <img src="logo.png" alt="Neumann János SC logó" class="brand-mark">
+            <div class="brand-text">
+                <span class="brand-title">NeumannShop</span>
+                <span class="brand-subtitle">Hivatalos csapatbolt</span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Főoldal</a></li>
+            <li><a href="termekek.html">Mezek</a></li>
+            <li><a href="kapcsolat.html">Kapcsolat</a></li>
+        </ul>
+        <div class="nav-right">
+            <a href="kosar.html" class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </a>
+        </div>
+    </nav>
+</header>
+
+<section class="cart-page">
+    <h1>Kosár</h1>
+    <div id="cart-items"></div>
+    <h2 id="cart-total"></h2>
+
+    <div class="checkout-form" id="checkout-form">
+        <h3>Rendelési adatok</h3>
+        <div class="form-grid">
+            <label>
+                Teljes név
+                <input type="text" id="order-name" placeholder="Pl. Kelemen György">
+            </label>
+            <label>
+                Email
+                <input type="email" id="order-email" placeholder="pelda@email.hu">
+            </label>
+            <label>
+                Telefonszám
+                <input type="tel" id="order-phone" placeholder="+36 30 123 4567">
+            </label>
+            <label>
+                Fizetési mód
+                <select id="order-payment">
+                    <option value="">Válassz...</option>
+                    <option value="card">Bankkártya</option>
+                    <option value="transfer">Átutalás</option>
+                    <option value="cod">Utánvét</option>
+                </select>
+            </label>
+            <label class="full-width">
+                Szállítási cím
+                <input type="text" id="order-address" placeholder="Irányítószám, város, utca, házszám">
+            </label>
+            <label class="full-width">
+                Megjegyzés (opcionális)
+                <textarea id="order-note" rows="3" placeholder="Pl. csomagpont, kapucsengő, stb."></textarea>
+            </label>
+        </div>
+    </div>
+
+    <button class="btn" onclick="checkout()">Rendelés leadása</button>
+</section>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <img src="logo.png" alt="Neumann János SC" class="footer-logo">
+            <div>
+                <h4>NeumannShop</h4>
+                <p>Hivatalos csapatmez bolt - Neumann János SC</p>
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <h5>Gyorslinkek</h5>
+            <a href="index.html">Főoldal</a>
+            <a href="termekek.html">Mezek</a>
+            <a href="kosar.html">Kosár</a>
+            <a href="kapcsolat.html">Kapcsolat</a>
+        </div>
+
+        <div class="footer-col">
+            <h5>Információ</h5>
+            <p><i class="fas fa-map-marker-alt"></i> Eger, Rákóczi út 48.</p>
+            <p><i class="fas fa-phone"></i> +36 36 536 070</p>
+            <p><i class="fas fa-envelope"></i> info@neumannshop.hu</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <span>© 2026 NeumannShop - Minden jog fenntartva.</span>
+    </div>
+</footer>
+
+<div class="chatbot">
+    <button id="chat-toggle"><i class="fas fa-comments"></i></button>
+    <div class="chat-window" id="chat-window">
+        <div class="chat-header">NeumannShop Chatbot</div>
+        <div class="chat-messages" id="chat-messages"></div>
+        <div class="chat-input">
+            <input type="text" id="chat-input" placeholder="Írj egy kérdést...">
+            <button onclick="sendMessage()">Küldés</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

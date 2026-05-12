@@ -1,0 +1,45 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="shieldFill" x1="120" y1="60" x2="388" y2="418" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E9C6F4"/>
+      <stop offset="1" stop-color="#B26CD8"/>
+    </linearGradient>
+    <linearGradient id="sideFill" x1="100" y1="120" x2="168" y2="410" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9B4FC8"/>
+      <stop offset="1" stop-color="#5B1E77"/>
+    </linearGradient>
+    <linearGradient id="sideFillRight" x1="412" y1="120" x2="344" y2="410" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9B4FC8"/>
+      <stop offset="1" stop-color="#5B1E77"/>
+    </linearGradient>
+    <filter id="shadow" x="18" y="14" width="476" height="484" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#000000" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <path d="M96 170L154 145V357L96 331V170Z" fill="url(#sideFill)" stroke="#0B0A10" stroke-width="10"/>
+    <path d="M416 170L358 145V357L416 331V170Z" fill="url(#sideFillRight)" stroke="#0B0A10" stroke-width="10"/>
+    <path d="M168 42C229 66 283 66 344 42L386 92C370 173 374 253 390 336C353 390 310 432 256 454C202 432 159 390 122 336C138 253 142 173 126 92L168 42Z" fill="url(#shieldFill)" stroke="#0B0A10" stroke-width="12"/>
+    <path d="M174 64C229 84 283 84 338 64L370 102C355 176 359 249 373 327C338 375 301 409 256 429C211 409 174 375 139 327C153 249 157 176 142 102L174 64Z" stroke="#7B2D92" stroke-width="6"/>
+    <path d="M167 274C198 290 228 297 256 297C284 297 314 290 345 274L360 301C333 325 309 343 256 351C203 343 179 325 152 301L167 274Z" fill="#F6EFFA" stroke="#7B2D92" stroke-width="5"/>
+    <path d="M184 206C192 163 213 122 242 116C230 153 230 191 234 233C220 249 202 252 192 242C184 234 181 221 184 206Z" fill="#09080C" stroke="#F5EAF9" stroke-width="4"/>
+    <path d="M328 210C332 181 346 150 366 148C360 167 355 194 355 235C346 244 335 249 321 248C309 247 299 239 297 228C293 208 305 187 328 170H388C381 191 369 219 356 238C349 248 339 253 325 253C310 253 300 248 295 239" fill="#09080C" stroke="#F5EAF9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M247 120C255 180 262 205 275 245C286 212 301 151 315 121" stroke="#09080C" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M247 120C255 180 262 205 275 245C286 212 301 151 315 121" stroke="#F5EAF9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="190" y="323" transform="rotate(-34 190 323)" fill="#FFFFFF" font-family="Georgia, serif" font-size="36" font-weight="700" letter-spacing="3">EGER</text>
+    <text x="325" y="332" transform="rotate(31 325 332)" fill="#FFFFFF" font-family="Georgia, serif" font-size="36" font-weight="700" letter-spacing="3">1981</text>
+    <g transform="translate(256 330)">
+      <circle r="57" fill="#FFFFFF" stroke="#0B0A10" stroke-width="8"/>
+      <polygon points="0,-21 20,-7 13,17 -13,17 -20,-7" fill="#0B0A10"/>
+      <polygon points="-34,-9 -20,-7 -13,17 -27,29 -43,15" fill="#0B0A10"/>
+      <polygon points="34,-9 20,-7 13,17 27,29 43,15" fill="#0B0A10"/>
+      <polygon points="-27,29 -13,17 0,34 -16,47 -34,39" fill="#0B0A10"/>
+      <polygon points="27,29 13,17 0,34 16,47 34,39" fill="#0B0A10"/>
+      <path d="M-20 -7L-34 -9M20 -7L34 -9M0 -21L0 -37M-13 17L-27 29M13 17L27 29M0 34L0 52" stroke="#D8D8D8" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    <path d="M114 382C151 370 190 365 256 365C322 365 361 370 398 382L384 432C347 457 305 462 256 470C207 462 165 457 128 432L114 382Z" fill="#0B0A10" stroke="#7B2D92" stroke-width="6"/>
+    <text x="256" y="410" text-anchor="middle" fill="#FFFFFF" font-family="Georgia, serif" font-size="34" font-weight="700" letter-spacing="2">NEUMANN JÁNOS</text>
+    <text x="256" y="435" text-anchor="middle" fill="#E9C6F4" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="1.7">GIMNÁZIUM, TECHNIKUM</text>
+    <text x="256" y="458" text-anchor="middle" fill="#E9C6F4" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="2.1">ÉS KOLLÉGIUM</text>
+  </g>
+</svg>

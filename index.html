@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeumannShop</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <a href="index.html" class="brand">
+            <img src="logo.png" alt="Neumann János SC logó" class="brand-mark">
+            <div class="brand-text">
+                <span class="brand-title">NeumannShop</span>
+                <span class="brand-subtitle">Hivatalos csapatbolt</span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Főoldal</a></li>
+            <li><a href="termekek.html">Mezek</a></li>
+            <li><a href="kapcsolat.html">Kapcsolat</a></li>
+        </ul>
+        <div class="nav-right">
+            <input type="text" id="searchInput" placeholder="Keresés...">
+            <a href="kosar.html" class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </a>
+        </div>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <img src="logo.png" alt="Neumann János SC logó" class="hero-logo">
+        <h1>Neumann János SC<br><span>Hivatalos Mezei</span></h1>
+        <p>Viseld büszkén az egri csapat lila színeit – fedezd fel legújabb kollékcióinkat!</p>
+        <a href="termekek.html" class="btn">Vásárlás most</a>
+    </div>
+</section>
+
+<section class="featured">
+    <h2>25/26-os szezon <span>mezei</span></h2>
+    <p class="section-subtitle">A Neumann János SC aktuális szezonkollekciója</p>
+    <div class="products" id="featured-products"></div>
+</section>
+
+<section class="featured next-match-section">
+    <h2>Következő <span>mérkőzés</span></h2>
+    <p class="section-subtitle">A következő hazai találkozó részletei</p>
+
+    <article class="next-match-card" id="next-match-card">
+        <div class="match-team">
+            <img src="logo.png" alt="Neumann János SC" class="match-logo">
+            <h3>Neumann János SC</h3>
+        </div>
+
+        <div class="match-center">
+            <span class="match-vs">VS</span>
+            <div class="match-date">2026.05.23. 18:00</div>
+            <div class="match-location">Neumann János Gimnázium, Technikum és Kollégium</div>
+        </div>
+
+        <div class="match-team">
+            <img src="logo2.png" alt="Tisza-Part FC" class="match-logo">
+            <h3>Tisza-Part FC</h3>
+        </div>
+    </article>
+</section>
+
+<section class="featured season-table">
+    <h2>Szezon <span>Tabella</span></h2>
+    <p class="section-subtitle">Neumann János SC - 2025/26 (kamu mintaadat)</p>
+    <div class="table-wrap">
+        <table class="standings-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Csapat</th>
+                    <th>M</th>
+                    <th>GY</th>
+                    <th>D</th>
+                    <th>V</th>
+                    <th>GK</th>
+                    <th>P</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="highlight-row"><td>1</td><td>Neumann János SC</td><td>24</td><td>18</td><td>4</td><td>2</td><td>54-19</td><td>58</td></tr>
+                <tr><td>2</td><td>Eger Városi SE</td><td>24</td><td>16</td><td>5</td><td>3</td><td>46-22</td><td>53</td></tr>
+                <tr><td>3</td><td>Felsőtárkány FC</td><td>24</td><td>14</td><td>6</td><td>4</td><td>42-25</td><td>48</td></tr>
+                <tr><td>4</td><td>Hevesi Spartacus</td><td>24</td><td>13</td><td>5</td><td>6</td><td>39-29</td><td>44</td></tr>
+                <tr><td>5</td><td>Gyöngyös United</td><td>24</td><td>10</td><td>7</td><td>7</td><td>36-33</td><td>37</td></tr>
+                <tr><td>6</td><td>Mátra Rangers</td><td>24</td><td>9</td><td>7</td><td>8</td><td>31-31</td><td>34</td></tr>
+                <tr><td>7</td><td>Bükkalja SK</td><td>24</td><td>6</td><td>6</td><td>12</td><td>25-38</td><td>24</td></tr>
+                <tr><td>8</td><td>Tisza-part FC</td><td>24</td><td>4</td><td>4</td><td>16</td><td>18-50</td><td>16</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <img src="logo.png" alt="Neumann János SC" class="footer-logo">
+            <div>
+                <h4>NeumannShop</h4>
+                <p>Hivatalos csapatmez bolt - Neumann János SC</p>
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <h5>Gyorslinkek</h5>
+            <a href="index.html">Főoldal</a>
+            <a href="termekek.html">Mezek</a>
+            <a href="kosar.html">Kosár</a>
+            <a href="kapcsolat.html">Kapcsolat</a>
+        </div>
+
+        <div class="footer-col">
+            <h5>Információ</h5>
+            <p><i class="fas fa-map-marker-alt"></i> Eger, Rákóczi út 48.</p>
+            <p><i class="fas fa-phone"></i> +36 36 536 070</p>
+            <p><i class="fas fa-envelope"></i> info@neumannshop.hu</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <span>© 2026 NeumannShop - Minden jog fenntartva.</span>
+    </div>
+</footer>
+
+<div class="chatbot">
+    <button id="chat-toggle"><i class="fas fa-comments"></i></button>
+    <div class="chat-window" id="chat-window">
+        <div class="chat-header">NeumannShop Chatbot</div>
+        <div class="chat-messages" id="chat-messages"></div>
+        <div class="chat-input">
+            <input type="text" id="chat-input" placeholder="Írj egy kérdést...">
+            <button onclick="sendMessage()">Küldés</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

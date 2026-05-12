@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeumannShop – Mezek</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <a href="index.html" class="brand">
+            <img src="logo.png" alt="Neumann János SC logó" class="brand-mark">
+            <div class="brand-text">
+                <span class="brand-title">NeumannShop</span>
+                <span class="brand-subtitle">Hivatalos csapatbolt</span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Főoldal</a></li>
+            <li><a href="termekek.html" class="active">Mezek</a></li>
+            <li><a href="kapcsolat.html">Kapcsolat</a></li>
+        </ul>
+        <div class="nav-right">
+            <input type="text" id="searchInput" placeholder="Keresés...">
+            <a href="kosar.html" class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </a>
+        </div>
+    </nav>
+</header>
+
+<section class="products-page">
+    <h1>Neumann János SC <span>Mezek</span></h1>
+    <p class="section-subtitle">Válassz az összes elérhető mez közül</p>
+
+    <div class="filters">
+        <select id="teamFilter">
+            <option value="all">Összes típus</option>
+        </select>
+    </div>
+
+    <div class="products" id="products-container"></div>
+</section>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <img src="logo.png" alt="Neumann János SC" class="footer-logo">
+            <div>
+                <h4>NeumannShop</h4>
+                <p>Hivatalos csapatmez bolt - Neumann János SC</p>
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <h5>Gyorslinkek</h5>
+            <a href="index.html">Főoldal</a>
+            <a href="termekek.html">Mezek</a>
+            <a href="kosar.html">Kosár</a>
+            <a href="kapcsolat.html">Kapcsolat</a>
+        </div>
+
+        <div class="footer-col">
+            <h5>Információ</h5>
+            <p><i class="fas fa-map-marker-alt"></i> Eger, Rákóczi út 48.</p>
+            <p><i class="fas fa-phone"></i> +36 36 536 070</p>
+            <p><i class="fas fa-envelope"></i> info@neumannshop.hu</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <span>© 2026 NeumannShop - Minden jog fenntartva.</span>
+    </div>
+</footer>
+
+<div class="chatbot">
+    <button id="chat-toggle"><i class="fas fa-comments"></i></button>
+    <div class="chat-window" id="chat-window">
+        <div class="chat-header">NeumannShop Chatbot</div>
+        <div class="chat-messages" id="chat-messages"></div>
+        <div class="chat-input">
+            <input type="text" id="chat-input" placeholder="Írj egy kérdést...">
+            <button onclick="sendMessage()">Küldés</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
