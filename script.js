@@ -685,6 +685,22 @@ function checkout() {
     }
 
     showToast('Köszönjük a rendelésed! Azonosító: ' + orderId, 'success');
+
+    const cartPage = document.querySelector('.cart-page');
+    if (cartPage) {
+        cartPage.innerHTML = `
+            <div class="order-success">
+                <div class="order-success-icon"><i class="fas fa-check-circle"></i></div>
+                <h2>Rendelés leadva!</h2>
+                <p>Köszönjük a vásárlásodat! Rendelési azonosítód:</p>
+                <div class="order-id">${orderId}</div>
+                <p class="order-success-sub">Hamarosan e-mailben visszaigazolást kapsz.</p>
+                <a href="index.html" class="btn">
+                    <i class="fas fa-home" style="margin-right:8px;"></i>Vissza a főoldalra
+                </a>
+            </div>
+        `;
+    }
 }
 
 function initFilter() {
