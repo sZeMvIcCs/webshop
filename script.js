@@ -4,7 +4,7 @@ const products = [
         name: 'Neumann Hazai Mez 2025/26',
         team: 'Neumann János SC',
         category: 'Hazai',
-        price: 12990,
+        price: 14100,
         image: 'hazaimez.png',
         badge: 'Bestseller',
         description: 'A Neumann János SC hivatalos hazai meze a 2025/26-os szezonra. Lila-fehér design, légáteresztő anyag.'
@@ -34,7 +34,7 @@ const products = [
         name: 'Neumann Kapusmez',
         team: 'Neumann János SC',
         category: 'Kapusmez',
-        price: 11990,
+        price: 5300,
         image: 'kapusmez.png',
         badge: '',
         description: 'A kapusnak tervezett speciális mez fekete-lila technikai dizájnnal.'
@@ -67,7 +67,8 @@ const fakePlayers = [
     { name: 'Toth Levente', number: 7 },
     { name: 'Varga Dominik', number: 11 },
     { name: 'Fodor Patrik', number: 5 },
-    { name: 'Szabo Noel', number: 14 }
+    { name: 'Szabo Noel', number: 14 },
+    { name: 'Krisztiánó Ronáldó', number: 67 }
 ];
 
 function normalizeCart(rawCart) {
