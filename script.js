@@ -68,7 +68,12 @@ const fakePlayers = [
     { name: 'Varga Dominik', number: 11 },
     { name: 'Fodor Patrik', number: 5 },
     { name: 'Szabo Noel', number: 14 },
-    { name: 'Krisztiánó Ronáldó', number: 67 }
+    { name: 'Krisztiánó Ronáldó', number: 67 },
+    { name: 'Torghelle Sándor', number: 13 },
+    { name: 'Király Gábor', number: 1 },
+    { name: 'Ádám Martin', number: 77 },
+    { name: 'Max Verstappen', number: 3 }
+    
 ];
 
 function normalizeCart(rawCart) {
