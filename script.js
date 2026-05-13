@@ -940,7 +940,8 @@ function initChatbot() {
     const messages = document.getElementById('chat-messages');
 
     if (toggle && chatWindow) {
-       
+        // Alapból nyitva legyen az oldal betöltésekor
+        chatWindow.style.display = 'block';
 
         toggle.addEventListener('click', function() {
             const isOpen = chatWindow.style.display === 'block';
